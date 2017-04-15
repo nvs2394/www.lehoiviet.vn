@@ -1,0 +1,356 @@
+/*CSS cho cac doi tuong trong website : nut bam, trang tri menu*/
+
+#pageHome {
+    h2 {
+        padding: 0px;
+        margin-left: 5px;
+        margin-right: 0px;
+    }
+}
+
+
+/*Header-title*/
+
+.head-title {
+    margin: 15px 5px 10px;
+    padding: 0;
+    p{
+        font-size: 20px;
+        padding: 5px 0;
+        display: inline-block !important;
+        margin: 0;
+      border-bottom: 3px solid #f80;
+    }
+}
+
+/*btn-top*/
+
+.btn-top a{
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  font-size: 35px;
+  padding: 5px;
+  cursor: pointer;
+  position: fixed;
+  right: 0;
+  bottom: 0px;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  &:hover{
+    background-color: #247ba0;
+    color: #fff;
+  }
+}
+
+/**/
+.modal-content{
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+}
+#login {
+  .carousel-inner .item{
+    width: 400px;
+  }
+  p{
+    margin: 7px 0;
+  }
+    #userLogin{
+      text-transform: uppercase;
+      .modal-body{
+        padding: 15px 15px 0;
+      }
+    }
+    #userLogin, #forgot-password{
+      .modal-dialog{
+        width: 400px;
+        margin: 30px auto;
+      }
+    }
+    .col-xs-6 {
+        padding: 0px;
+    }
+    .modal-title{
+      font-size: 18px;
+      width: calc(100% - 30px);
+      white-space: nowrap;
+      overflow: hidden !important;
+      text-overflow: ellipsis;
+    }
+    .modal-footer{
+      text-transform: uppercase;
+    }
+    .modal-body {
+      height: 300px;
+      overflow-y: auto;
+    }
+    .btn-blue{
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+    .social-or-login {
+        margin: 5px 0;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        &:first-child {
+            display: inline-block;
+            background-color: #fff;
+            padding: 0 8px;
+            color: #228aa9;
+            font-size: 13px;
+        }
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            left: 0;
+            right: 0;
+            border-top: 1px dotted #228aa9;
+        }
+        span{
+            background-color: #fff;
+            z-index: 100;
+        }
+    }
+    .social-login {
+        a {
+            border-radius: 100%;
+            width: 42px;
+            height: 42px;
+            line-height: 46px;
+            padding: 0;
+            margin: 0 1px;
+            border-width: 0;
+            font-size: 24px;
+        }
+    }
+    .toolbar {
+        background-color: #228aa9;
+        padding: 10px 5px 10px 5px;
+        margin-top: 10px;
+      a{
+        cursor: pointer;
+        color: #fff;
+        &:hover{
+          color:#fff;
+        }
+      }
+    }
+}
+
+
+/*#login*/
+
+.text-error {
+  color: #c00;
+  text-transform: lowercase;
+}
+
+.reset-password {
+    label {
+        font-size: 14px;
+    }
+}
+
+
+/*live stream*/
+.create-live-stream{
+  background-color: rgba(0,0,0,0.5);
+  padding: 50px 0;
+  text-align: center;
+  .image-live{
+    position: relative;
+    display: inline-block;
+    height: 400px;
+    width: 640px;
+    overflow: hidden;
+    img{
+      height: 400px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+  .overlay-create{
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    padding: 40px 10px 0;
+    color: #fff;
+    button{
+      border: 0;
+      background-color: transparent;
+      font-size: 70px;
+      color: #fff;
+      margin-top: 50px;
+    }
+  }
+  .row-overlay{
+    >div{
+      width: 50%;
+      float: left;
+      padding: 20px 0 0;
+      &:first-child{
+        font-size: 65px;
+        font-weight: 700;
+        padding-top: 50px;
+        i{
+          margin-right: 10px;
+          color: #E62118;
+        }
+      }
+      &:last-child{
+        text-align: left;
+        font-size: 20px;
+        h2{
+          font-size: 30px;
+        }
+      }
+    }
+  }
+  .video-live{
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    video{
+      width: auto;
+      max-height: calc(100vh - 100px);
+    }
+    .overlay-video{
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding-top: 35%;
+      text-align: center;
+      background-color: rgba(0,0,0,0.7);
+      font-size: 70px;
+      opacity: 0;
+      -webkit-transition: opacity 0.8s ease 0s;
+      -moz-transition: opacity 0.8s ease 0s;
+      -o-transition: opacity 0.8s ease 0s;
+      transition: opacity 0.8s ease 0s;
+      cursor: pointer;
+      a{
+        color: #fff;
+      }
+    }
+    img{
+      height: 45px;
+      width: auto;
+      position: absolute;
+      left:0;
+      top:0;
+    }
+    &:hover{
+      .overlay-video{
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .create-live-stream{
+    .image-live{
+      width: 100%;
+      height: auto;
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+    .row-overlay{
+       > div:last-child{
+         font-size: 15px;
+         h2{
+           font-size: 25px;
+         }
+         p{
+           margin:0;
+         }
+       }
+        > div:first-child{
+          font-size: 50px;
+        }
+      button{
+        font-size: 50px;
+        margin-top: 40px;
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .create-live-stream{
+    .overlay-create{
+      padding: 0 10px 0;
+      button{
+        margin-top: 25px;
+      }
+    }
+    .row-overlay{
+      >div{
+        width: 100%;
+        float: none;
+        padding: 0;
+        &:first-child{
+          padding-top: 35px;
+          font-size: 35px;
+        }
+        &:last-child{
+          text-align: center;
+          h2{
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    .video-live{
+      video{
+        width: 100%;
+        height: auto;
+      }
+      img{
+        height: 35px;
+      }
+    }
+  }
+  #login .btn-blue {
+    font-size: 13px;
+  }
+}
+@media (max-width: 550px) {
+  .create-live-stream {
+    padding: 20px 0;
+    .image-live{
+      min-height: calc(100vh - 100px);
+      img{
+        height: calc(100vh - 100px);
+        width: auto;
+      }
+    }
+  }
+  #login #userLogin, #login #forgot-password{
+    .modal-dialog{
+      width: calc(100% - 30px);
+      padding-left: 0;
+    }
+  }
+  #login .modal-title{
+    font-size: 15px;
+  }
+  #login .modal-body{
+    height: 275px;
+  }
+  #login .carousel-inner .item{
+    width: 100%;
+  }
+}

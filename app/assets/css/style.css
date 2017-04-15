@@ -1,0 +1,1468 @@
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+/*Tap tin reset CSS*/
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  box-sizing: content-box;
+  /* 2 */
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/*tap tin chua CSS cho thanh phan toan cuc tren website nhu html, body, a*/
+a:active, a:hover, a:visited, a:focus, button:active, button:hover, button:visited, button:focus, select:active, select:focus {
+  outline: 0 !important;
+}
+
+select:focus, select:active, select:visited {
+  outline: 0;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+body {
+  padding-top: 54px !important;
+}
+
+.reset-grid .col-xs-1, .reset-grid .col-sm-1, .reset-grid .col-md-1, .reset-grid .col-lg-1, .reset-grid .col-xs-2, .reset-grid .col-sm-2, .reset-grid .col-md-2, .reset-grid .col-lg-2, .reset-grid .col-xs-3, .reset-grid .col-sm-3, .reset-grid .col-md-3, .reset-grid .col-lg-3, .reset-grid .col-xs-4, .reset-grid .col-sm-4, .reset-grid .col-md-4, .reset-grid .col-lg-4, .reset-grid .col-xs-5, .reset-grid .col-sm-5, .reset-grid .col-md-5, .reset-grid .col-lg-5, .reset-grid .col-xs-6, .reset-grid .col-sm-6, .reset-grid .col-md-6, .reset-grid .col-lg-6, .reset-grid .col-xs-7, .reset-grid .col-sm-7, .reset-grid .col-md-7, .reset-grid .col-lg-7, .reset-grid .col-xs-8, .reset-grid .col-sm-8, .reset-grid .col-md-8, .reset-grid .col-lg-8, .reset-grid .col-xs-9, .reset-grid .col-sm-9, .reset-grid .col-md-9, .reset-grid .col-lg-9, .reset-grid .col-xs-10, .reset-grid .col-sm-10, .reset-grid .col-md-10, .reset-grid .col-lg-10, .reset-grid .col-xs-11, .reset-grid .col-sm-11, .reset-grid .col-md-11, .reset-grid .col-lg-11, .reset-grid .col-xs-12, .reset-grid .col-sm-12, .reset-grid .col-md-12, .reset-grid .col-lg-12 {
+  padding-left: 0;
+  padding-right: 0;
+}
+.reset-grid .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.btn-gray {
+  background-color: #F0F0F0;
+  color: #555;
+  padding: 5px 10px;
+  border: 0;
+  outline: 0;
+  transition: 0.4s;
+}
+.btn-gray:hover {
+  background-color: #C9C7C7;
+}
+
+.btn-blue {
+  background-color: #228aa9;
+  transition: 0.4s;
+  padding: 5px 10px;
+  color: #fff;
+  border: 0;
+  outline: 0;
+}
+.btn-blue:hover {
+  background-color: #f80;
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-close {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  outline: 0;
+  transition: 0.4s;
+  padding: 5px 10px;
+}
+.btn-close:hover {
+  background-color: #ccc;
+}
+
+.boxShadow {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+#top-member {
+  font-size: 11px;
+  background-color: #fff;
+  margin-bottom: 0px;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 20px;
+}
+#top-member p {
+  color: #c00;
+  font-size: 18px;
+}
+#top-member ul,
+#top-member li {
+  list-style: none;
+  text-align: center;
+  padding: 0px;
+}
+#top-member li {
+  padding-top: 5px;
+}
+#top-member .icon-user {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+}
+#top-member .icon-user i {
+  position: absolute;
+  bottom: 0;
+  right: 2px;
+  font-size: 16px;
+  background-color: #fff;
+  border-radius: 50%;
+  color: #42E40A;
+}
+#top-member .view-more {
+  background-color: #ddd;
+  padding: 18px 0;
+}
+#top-member img {
+  width: 65px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+#top-member .item a {
+  color: #333;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+#top-member .item a:hover {
+  text-decoration: none;
+  color: #333;
+}
+#top-member .col-md-1 {
+  padding: 0px;
+}
+#top-member span {
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  padding: 0 5px;
+}
+
+nav {
+  border: 1px solid #ddd !important;
+}
+
+#footer {
+  width: 100%;
+  color: #aaa;
+  padding: 70px 0;
+  font-size: 13px;
+  background-color: #282F3F;
+}
+#footer .margin-footer {
+  margin-top: 20px;
+}
+#footer .infoLogo {
+  padding: 40px 0px 40px 0px;
+}
+#footer .description {
+  padding: 0 20px 0 0;
+}
+#footer .description p {
+  max-width: 315px;
+}
+#footer .description img {
+  width: auto;
+  max-height: 70px;
+}
+#footer .infoWeb {
+  color: #aaa;
+  padding: 10px;
+  height: 100%;
+}
+#footer .infoWeb h4 {
+  font-weight: 500;
+  font-size: 15px;
+}
+#footer a {
+  color: #aaa;
+}
+#footer a:hover {
+  color: #c4c4c4;
+}
+#footer .list-tag a {
+  display: inline-block;
+  padding: 5px 15px;
+  border: 1px solid #525D74;
+  border-radius: 3px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin: 10px 10px 0 0;
+  border-radius: 20px;
+}
+#footer .list-tag a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: #c4c4c4;
+}
+#footer .about-us a {
+  display: inline-block;
+  width: 130px;
+  margin-top: 10px;
+  padding: 8px 15px;
+  color: #aaa;
+  border: 2px solid #525D74;
+  border-radius: 3px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+#footer .about-us a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: #c4c4c4;
+}
+#footer .subcribe-email {
+  margin-top: 20px;
+  border: 2px solid #525D74;
+  border-radius: 3px;
+  background-color: transparent;
+  width: 200px;
+  height: 43px;
+  padding: 5px;
+}
+#footer .subcribe-email i {
+  font-size: 18px;
+  line-height: 1;
+  color: #525D74;
+  margin-right: 5px;
+}
+#footer .subcribe-email input {
+  background-color: transparent;
+  height: 30px;
+  width: 159px;
+  border: 0;
+}
+
+#footer .social-icon > li > a {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  display: block;
+  border-radius: 100%;
+}
+
+#footer .social-icon > li > a > .fa {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  margin-left: -8px;
+  margin-top: -10px;
+  color: #1b1d2a;
+  font-size: 19px;
+}
+
+#footer .social-icon > li > a:hover > .fa {
+  color: #fff;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#footer .social-icon > li > .icon-twitter:hover {
+  background: #4099FF;
+}
+
+#footer .social-icon > li > .icon-facebook:hover {
+  background: #4467AD;
+}
+
+#footer .social-icon > li > .icon-youtube:hover {
+  background: #FF4B4B;
+}
+
+#footer .social-icon > li > .icon-instagram:hover {
+  background: #6e99b2;
+}
+
+#copyright {
+  width: 100%;
+  padding: 15px 0;
+  background-color: #222939;
+  color: #aaa;
+  font-size: 12px;
+  text-align: center;
+  line-height: 18px;
+}
+
+#copyright p {
+  margin-bottom: 0px;
+}
+
+.btn-festival {
+  padding: 5px 10px;
+  background-color: #337ab7;
+  color: #fff;
+  transition: 0.3s;
+}
+.btn-festival:hover {
+  background-color: #f80;
+}
+
+.btn-edit, .btn-remove {
+  color: #fff;
+  background-color: #337ab7;
+  cursor: pointer;
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  border-radius: 100%;
+  font-size: 12px !important;
+  text-align: center;
+  padding-top: 5px;
+  transition: 0.3s;
+}
+.btn-edit:hover, .btn-remove:hover {
+  background-color: #f80;
+}
+
+.btn-fix {
+  min-width: 110px;
+}
+
+.feedback-form .infomation-box span {
+  color: #c00;
+}
+.feedback-form .infomation-box .infomation-content {
+  margin-bottom: 5px;
+}
+.feedback-form .infomation-box .box-info-normal {
+  padding: 5px 0;
+  width: 100%;
+  vertical-align: middle;
+}
+.feedback-form .infomation-box .box-info-normal .lable {
+  padding-top: 10px;
+}
+.feedback-form .infomation-box .details textarea {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border: 1px solid #a0a0a0;
+  width: 100%;
+}
+.feedback-form .infomation-box .details textarea:focus {
+  border: 1px solid #f80;
+}
+.feedback-form .infomation-box .details input {
+  padding: 10px 6px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid #a0a0a0;
+  width: 100%;
+}
+.feedback-form .infomation-box .details input:focus {
+  border-bottom: 1px solid #f80;
+}
+.feedback-form .infomation-box .details select {
+  padding: 5px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid #a0a0a0;
+}
+.feedback-form .infomation-box .details select:focus {
+  border-bottom: 1px solid #f80;
+}
+
+.pageNotFound {
+  background-color: #F8F8F8;
+  text-align: center;
+  padding-bottom: 20px;
+  color: #777777;
+}
+.pageNotFound h1 {
+  font-size: 200px !important;
+  margin: 40px 0 20px 0;
+}
+.pageNotFound h2 {
+  font-size: 80px !important;
+  margin: 0;
+  line-height: 80px;
+}
+.pageNotFound h3 {
+  font-size: 30px;
+}
+
+.slider-header {
+  height: calc(100vw / (2.6));
+  overflow: hidden;
+}
+.slider-header .carousel-indicators {
+  display: none;
+}
+.slider-header .carousel-inner > .item {
+  height: calc(100vw / (2.6));
+  overflow: hidden;
+  font-family: 'Lobster', cursive;
+}
+.slider-header .carousel-inner > .item h4 {
+  font-size: 25px;
+}
+.slider-header .carousel-inner > .item > a {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+}
+.slider-header .carousel-inner > .item > a > img {
+  width: 100%;
+  height: calc(100vw / (2.6));
+}
+.slider-header .carousel-control {
+  width: 5%;
+}
+.slider-header .carousel-control .icon-next::before, .slider-header .carousel-control .icon-prev::before {
+  font-size: 60px;
+  cursor: pointer;
+}
+.slider-header .carousel-control .icon-next, .slider-header .carousel-control .icon-prev {
+  width: 45px;
+  height: 60px;
+  top: 45%;
+}
+.slider-header .carousel-caption {
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 992px) {
+  #footer {
+    padding: 20px 0;
+  }
+}
+@media (max-width: 767px) and (min-width: 605px) {
+  #footer .infoWeb {
+    width: 50%;
+  }
+}
+@media (max-width: 767px) {
+  .slider-header .carousel-inner > .item h4 {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .carousel-caption {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+@media (max-width: 400px) {
+  #footer .description img {
+    max-height: 60px;
+  }
+
+  .btn-fix {
+    min-width: 100px;
+  }
+
+  .slider-header .carousel-control .icon-next::before, .slider-header .carousel-control .icon-prev::before {
+    font-size: 40px;
+  }
+
+  .slider-header .carousel-control .icon-next, .slider-header .carousel-control .icon-prev {
+    top: 35%;
+    width: 30px;
+    height: 40px;
+  }
+
+  .slider-header .carousel-inner > .item h4 {
+    font-size: 15px;
+  }
+}
+.notify-data .col-15 {
+  width: 30px;
+  float: left;
+}
+.notify-data .col-85 {
+  width: calc(100% - 30px);
+  float: left;
+}
+
+/*CSS cho cac doi tuong trong website : nut bam, trang tri menu*/
+#pageHome h2 {
+  padding: 0px;
+  margin-left: 5px;
+  margin-right: 0px;
+}
+
+/*Header-title*/
+.head-title {
+  margin: 15px 5px 10px;
+  padding: 0;
+}
+.head-title p {
+  font-size: 20px;
+  padding: 5px 0;
+  display: inline-block !important;
+  margin: 0;
+  border-bottom: 3px solid #f80;
+}
+
+/*btn-top*/
+.btn-top a {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  font-size: 35px;
+  padding: 5px;
+  cursor: pointer;
+  position: fixed;
+  right: 0;
+  bottom: 0px;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+.btn-top a:hover {
+  background-color: #247ba0;
+  color: #fff;
+}
+
+/**/
+.modal-content {
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+#login .carousel-inner .item {
+  width: 400px;
+}
+#login p {
+  margin: 7px 0;
+}
+#login #userLogin {
+  text-transform: uppercase;
+}
+#login #userLogin .modal-body {
+  padding: 15px 15px 0;
+}
+#login #userLogin .modal-dialog, #login #forgot-password .modal-dialog {
+  width: 400px;
+  margin: 30px auto;
+}
+#login .col-xs-6 {
+  padding: 0px;
+}
+#login .modal-title {
+  font-size: 18px;
+  width: calc(100% - 30px);
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+#login .modal-footer {
+  text-transform: uppercase;
+}
+#login .modal-body {
+  height: 300px;
+  overflow-y: auto;
+}
+#login .btn-blue {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+#login .social-or-login {
+  margin: 5px 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+#login .social-or-login:first-child {
+  display: inline-block;
+  background-color: #fff;
+  padding: 0 8px;
+  color: #228aa9;
+  font-size: 13px;
+}
+#login .social-or-login:before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 1px dotted #228aa9;
+}
+#login .social-or-login span {
+  background-color: #fff;
+  z-index: 100;
+}
+#login .social-login a {
+  border-radius: 100%;
+  width: 42px;
+  height: 42px;
+  line-height: 46px;
+  padding: 0;
+  margin: 0 1px;
+  border-width: 0;
+  font-size: 24px;
+}
+#login .toolbar {
+  background-color: #228aa9;
+  padding: 10px 5px 10px 5px;
+  margin-top: 10px;
+}
+#login .toolbar a {
+  cursor: pointer;
+  color: #fff;
+}
+#login .toolbar a:hover {
+  color: #fff;
+}
+
+/*#login*/
+.text-error {
+  color: #c00;
+  text-transform: lowercase;
+}
+
+.reset-password label {
+  font-size: 14px;
+}
+
+/*live stream*/
+.create-live-stream {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 50px 0;
+  text-align: center;
+}
+.create-live-stream .image-live {
+  position: relative;
+  display: inline-block;
+  height: 400px;
+  width: 640px;
+  overflow: hidden;
+}
+.create-live-stream .image-live img {
+  height: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+.create-live-stream .overlay-create {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  padding: 40px 10px 0;
+  color: #fff;
+}
+.create-live-stream .overlay-create button {
+  border: 0;
+  background-color: transparent;
+  font-size: 70px;
+  color: #fff;
+  margin-top: 50px;
+}
+.create-live-stream .row-overlay > div {
+  width: 50%;
+  float: left;
+  padding: 20px 0 0;
+}
+.create-live-stream .row-overlay > div:first-child {
+  font-size: 65px;
+  font-weight: 700;
+  padding-top: 50px;
+}
+.create-live-stream .row-overlay > div:first-child i {
+  margin-right: 10px;
+  color: #E62118;
+}
+.create-live-stream .row-overlay > div:last-child {
+  text-align: left;
+  font-size: 20px;
+}
+.create-live-stream .row-overlay > div:last-child h2 {
+  font-size: 30px;
+}
+.create-live-stream .video-live {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+}
+.create-live-stream .video-live video {
+  width: auto;
+  max-height: calc(100vh - 100px);
+}
+.create-live-stream .video-live .overlay-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 35%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 70px;
+  opacity: 0;
+  -webkit-transition: opacity 0.8s ease 0s;
+  -moz-transition: opacity 0.8s ease 0s;
+  -o-transition: opacity 0.8s ease 0s;
+  transition: opacity 0.8s ease 0s;
+  cursor: pointer;
+}
+.create-live-stream .video-live .overlay-video a {
+  color: #fff;
+}
+.create-live-stream .video-live img {
+  height: 45px;
+  width: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.create-live-stream .video-live:hover .overlay-video {
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .create-live-stream .image-live {
+    width: 100%;
+    height: auto;
+  }
+  .create-live-stream .image-live img {
+    width: 100%;
+    height: auto;
+  }
+  .create-live-stream .row-overlay > div:last-child {
+    font-size: 15px;
+  }
+  .create-live-stream .row-overlay > div:last-child h2 {
+    font-size: 25px;
+  }
+  .create-live-stream .row-overlay > div:last-child p {
+    margin: 0;
+  }
+  .create-live-stream .row-overlay > div:first-child {
+    font-size: 50px;
+  }
+  .create-live-stream .row-overlay button {
+    font-size: 50px;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .create-live-stream .overlay-create {
+    padding: 0 10px 0;
+  }
+  .create-live-stream .overlay-create button {
+    margin-top: 25px;
+  }
+  .create-live-stream .row-overlay > div {
+    width: 100%;
+    float: none;
+    padding: 0;
+  }
+  .create-live-stream .row-overlay > div:first-child {
+    padding-top: 35px;
+    font-size: 35px;
+  }
+  .create-live-stream .row-overlay > div:last-child {
+    text-align: center;
+  }
+  .create-live-stream .row-overlay > div:last-child h2 {
+    font-size: 20px;
+  }
+  .create-live-stream .video-live video {
+    width: 100%;
+    height: auto;
+  }
+  .create-live-stream .video-live img {
+    height: 35px;
+  }
+
+  #login .btn-blue {
+    font-size: 13px;
+  }
+}
+@media (max-width: 550px) {
+  .create-live-stream {
+    padding: 20px 0;
+  }
+  .create-live-stream .image-live {
+    min-height: calc(100vh - 100px);
+  }
+  .create-live-stream .image-live img {
+    height: calc(100vh - 100px);
+    width: auto;
+  }
+
+  #login #userLogin .modal-dialog, #login #forgot-password .modal-dialog {
+    width: calc(100% - 30px);
+    padding-left: 0;
+  }
+
+  #login .modal-title {
+    font-size: 15px;
+  }
+
+  #login .modal-body {
+    height: 275px;
+  }
+
+  #login .carousel-inner .item {
+    width: 100%;
+  }
+}
+.menu-fix-top {
+  background-color: #ffffff;
+}
+.menu-fix-top a {
+  cursor: pointer;
+}
+
+.navbar-brand {
+  padding: 5px 0;
+}
+.navbar-brand img {
+  height: 40px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.navbar-nav > li > .menu-create-post {
+  padding: 7px 0;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: transparent;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: transparent;
+}
+
+.menu-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-top: 7px;
+  background-color: #ddd;
+  padding: 0 !important;
+}
+.menu-avatar img {
+  width: 36px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.menu-create-post i {
+  font-size: 16px;
+  display: block;
+  width: 20px;
+  height: 36px;
+  margin: 0 auto;
+  border-radius: 50%;
+  padding: 10px 3px;
+}
+
+.navbar-right > li {
+  padding: 0 5px;
+}
+
+.navbar-nav .hover-menu {
+  font-weight: 600;
+  transition: all 0.15s ease-in-out 0s;
+  color: #66757f;
+  border-bottom-color: #247ba0;
+  padding-bottom: 10px;
+}
+.navbar-nav .hover-menu:hover, .navbar-nav .hover-menu:focus {
+  border-bottom: 5px solid #247ba0;
+  color: #247ba0;
+}
+.navbar-nav .video-live {
+  color: #c00;
+  border: 1px solid #c00;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 5px;
+}
+
+.navbar-nav > li > .btn-notify {
+  padding: 13px 0 0 5px;
+}
+
+.notify > a {
+  font-size: 22px;
+  display: block;
+  width: 34px;
+  height: 50px;
+  overflow: hidden;
+  line-height: 0;
+  position: relative;
+  color: #247ba0;
+}
+.notify > a span {
+  background-color: #c00;
+  border-radius: 50%;
+  color: #ffffff;
+  display: block;
+  font-size: 9px;
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  right: 0px;
+  top: 5px;
+  text-align: center;
+}
+.notify .dropdown-menu {
+  width: 350px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.notify .message .span-first {
+  color: #048A05;
+}
+.notify .message .span-last {
+  color: #9C0100;
+}
+
+.dropdown-menu > .notification-message-item > a {
+  padding: 10px 5px;
+}
+
+.notification-message-item a {
+  display: block;
+  padding: 5px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}
+.notification-message-item a div {
+  float: left;
+}
+.notification-message-item .thumnail {
+  width: 80px;
+  height: 40px;
+  overflow: hidden;
+}
+.notification-message-item .thumnail img {
+  width: 80px;
+  height: auto;
+  margin: 0 auto;
+}
+.notification-message-item .message {
+  width: calc(100% -  80px);
+  height: 40px;
+  padding: 0 5px;
+}
+.notification-message-item .message p {
+  margin-bottom: 0px;
+  font-weight: 500;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+.notification-message-item .message span {
+  font-size: 10px;
+  font-weight: 300;
+}
+
+.dropdown-menu {
+  padding: 0;
+}
+.dropdown-menu > li > a {
+  color: #66757f;
+}
+.dropdown-menu > li > a:hover {
+  background-color: #247ba0;
+  color: #ffffff;
+}
+.dropdown-menu > li > a:hover .message .span-first, .dropdown-menu > li > a:hover .message .span-last {
+  color: #fff;
+}
+
+.dropdown-user > li > a {
+  padding: 5px 15px;
+}
+
+.btn-login {
+  background-color: #247ba0;
+  color: #fff;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  margin-top: 5px;
+  height: 38px;
+  font-weight: 500;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+}
+.btn-login:hover {
+  background-color: #247ba0 !important;
+  color: #fff !important;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: #2467A5;
+}
+
+@media (max-width: 767px) {
+  .navbar-brand {
+    padding-top: 5px;
+  }
+
+  .navbar-nav .video-live {
+    margin: 5px;
+  }
+
+  .notify .dropdown-menu {
+    width: 100%;
+  }
+
+  .navbar-nav .open .dropdown-menu {
+    border: 1px solid #ddd;
+  }
+
+  .navbar-nav .open .dropdown-menu > li > a, .navbar-nav .open .dropdown-menu .dropdown-header {
+    padding: 5px 15px 5px 10px;
+  }
+
+  .nav > li > a {
+    display: inline-block;
+  }
+}
+#review-top-list {
+  padding: 50px 0;
+  min-height: 50vh;
+}
+#review-top-list img {
+  width: 60px;
+}
+#review-top-list .username a {
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+#review-top-list .username a:hover {
+  text-decoration: none;
+  color: #f80;
+}
+#review-top-list .user-item {
+  margin-top: 10px;
+}
+#review-top-list .box-item {
+  padding: 5px 0;
+  background-color: #fff;
+  border: 1px solid #eee;
+}

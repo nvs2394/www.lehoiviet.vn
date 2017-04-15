@@ -1,0 +1,223 @@
+.menu-fix-top{
+  background-color: #ffffff;
+  a{
+    cursor: pointer;
+  }
+}
+.navbar-brand{
+  padding: 5px 0;
+  img{
+    height: 40px;
+    width: auto;
+    margin: 0 auto;
+  }
+}
+.navbar-nav > li {
+  >.menu-create-post{
+    padding: 7px 0;
+  }
+}
+.nav > li > a:hover, .nav > li > a:focus{
+  background-color: transparent;
+}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
+  background-color: transparent;
+}
+.menu-avatar{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-top: 7px;
+  background-color: #ddd;
+  padding: 0 !important;
+  img{
+    width: 36px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+}
+.menu-create-post{
+  i{
+    font-size: 16px;
+    display: block;
+    //width: 36px;
+    width: 20px;
+    height: 36px;
+    margin: 0 auto;
+    border-radius: 50%;
+    //background-color: #247BA0;
+    //color: #ffffff;
+    padding: 10px 3px;
+  }
+}
+.navbar-right > li{
+  padding: 0 5px;
+}
+//custom css hover menu
+.navbar-nav{
+  .hover-menu{
+    font-weight: 600;
+    transition: all 0.15s ease-in-out 0s;
+    color: #66757f;
+    border-bottom-color: #247ba0;
+    padding-bottom: 10px;
+    &:hover,
+    &:focus {
+      border-bottom: 5px solid #247ba0;
+      color: #247ba0;
+    }
+  }
+  .video-live{
+    color: #c00;
+    border: 1px solid #c00;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 5px;
+  }
+}
+//notify
+.navbar-nav > li {
+  > .btn-notify{
+    padding: 13px 0 0 5px;
+  }
+}
+.notify{
+  >a{
+    font-size: 22px;
+    display: block;
+    width: 34px;
+    height: 50px;
+    overflow: hidden;
+    line-height: 0;
+    position: relative;
+    color: #247ba0;
+    span{
+      background-color: #c00;
+      border-radius: 50%;
+      color: #ffffff;
+      display: block;
+      font-size: 9px;
+      height: 18px;
+      width: 18px;
+      position: absolute;
+      right: 0px;
+      top: 5px;
+      text-align: center;
+    }
+  }
+  .dropdown-menu{
+    width: 350px;
+    max-height: 300px;
+    // overflow-x: hidden;
+    overflow-y:auto;
+  }
+  .message{
+      .span-first{
+        color:#048A05;
+      }
+      .span-last{
+        color:#9C0100;
+      }
+  }
+}
+.dropdown-menu > .notification-message-item > a{
+  padding: 10px 5px;
+}
+.notification-message-item{
+  a{
+    display: block;
+    padding: 5px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    div{
+      float: left;
+    }
+  }
+  .thumnail{
+    width: 80px;
+    height: 40px;
+    overflow: hidden;
+    img{
+      width: 80px;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+  .message{
+    width: calc(100% -  80px);
+    height: 40px;
+    padding: 0 5px;
+    p{
+      margin-bottom: 0px;
+      font-weight: 500;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden !important;
+      text-overflow: ellipsis;
+    }
+    span{
+      font-size: 10px;
+      font-weight: 300;
+    }
+  }
+}
+.dropdown-menu{
+  padding: 0;
+  >li > a{
+    color: #66757f;
+    &:hover{
+      background-color: #247ba0;
+      color: #ffffff;
+      .message {
+        .span-first, .span-last{
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+.dropdown-user{
+  >li >a{
+    padding: 5px 15px;
+  }
+}
+.btn-login{
+  background-color: #247ba0;
+  color: #fff;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  margin-top: 5px;
+  height: 38px;
+  font-weight: 500;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  &:hover{
+    background-color: #247ba0 !important;
+    color: #fff !important;
+  }
+}
+.navbar-toggle .icon-bar{
+  background-color: #2467A5;
+}
+
+@media  (max-width: 767px){
+  .navbar-brand{
+    padding-top: 5px;
+  }
+  .navbar-nav .video-live{
+    margin: 5px;
+  }
+  .notify .dropdown-menu{
+    width: 100%;
+  }
+  .navbar-nav .open .dropdown-menu{
+    border: 1px solid #ddd;
+  }
+  .navbar-nav .open .dropdown-menu > li > a, .navbar-nav .open .dropdown-menu .dropdown-header {
+    padding: 5px 15px 5px 10px;
+  }
+  .nav > li > a{
+    display: inline-block;
+  }
+}

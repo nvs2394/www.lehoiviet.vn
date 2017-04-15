@@ -1,0 +1,212 @@
+<div id="profile_edit" ng-init="initData()">
+  <div id="profile">
+      <div class="row profile_edit_area">
+          <!-- left column -->
+          <div class="col-md-3 col-md-offset-1  col-sm-5 col-xs-12">
+              <div class="user_left_page">
+                  <div class="infoUser borderBottom">
+                      <div class="user-avatar">
+                          <img ng-src="https://api.lehoiviet.vn/{{avatar}}" class="img-circle" alt="avatar">
+                      </div>
+                      <div class="user-name-bar">
+                          <h4>{{lastName}} {{firstName}}</h4>
+                      </div>
+                  </div>
+                  <div class="tabAction">
+                      <ul class="infoList">
+                          <li>
+                              <a class="action" id="infoAccount" ng-click="changTab('infoAccount')">
+                                  <i class="fa fa-pencil-square-o"></i>Thông tin tài khoản
+                              </a>
+                          </li>
+                          <li>
+                              <a id="updateAvatar" ng-click="changTab('updateAvatar')">
+                                  <i class="fa fa-smile-o" aria-hidden="true"></i>Cập nhật hình đại diện
+                              </a>
+                          </li>
+                          <li>
+                              <a id="UpdatePassword" ng-click="changTab('UpdatePassword')">
+                                  <i class="fa fa-minus-square-o" aria-hidden="true"></i>Đổi mật khẩu
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <!-- edit form column -->
+          <div class="col-md-6 col-sm-7 col-xs-12 infoTab inputCustom " data-ng-init="getProfileUser()">
+              <div class="profileEdit">
+                  <section class="infoAccountTab">
+                      <article>
+                          <h3 class="account-edit-profile-header">Thông tin cơ bản</h3>
+                          <div class="row">
+                              <label class="col-xs-3 control-label">Tên: </label>
+                              <div class="col-xs-9">
+                                  <input ng-model="user.firstName" type="text">
+                              </div>
+                          </div>
+                          <div class="row">
+                              <label class="col-xs-3 control-label">Họ: </label>
+                              <div class="col-xs-9">
+                                  <input ng-model="lastName" type="text">
+                              </div>
+                          </div>
+                          <div class="row">
+                              <label class="col-xs-3 control-label">Giới tính: </label>
+                              <div class="col-xs-9">
+                                  <label class="radio-inline">
+                                      <input ng-model="gender" ng-value="1" type="radio" name="gender">Nam
+                                  </label>
+                                  <label class="radio-inline">
+                                      <input ng-model="gender" ng-value="2" type="radio" name="gender">Nữ
+                                  </label>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <label class="col-xs-3 control-label">Company: </label>
+                              <div class="col-xs-9">
+                                  <input ng-model="company" type="text" />
+                              </div>
+                          </div>
+                          <div class="row">
+                              <label class="col-md-3 control-label">Giới thiệu bản thân: </label>
+                              <div class="col-md-9">
+                                  <textarea ng-model="description" class="form-control"></textarea>
+                              </div>
+                          </div>
+                          <h3 class="account-edit-profile-header">Thông tin liên hệ</h3>
+                          <div class="row">
+                              <label class="col-xs-3 control-label">Email:</label>
+                              <div class="col-xs-9">
+                                  <input ng-model="email" type="text" disabled="disabled">
+                              </div>
+                          </div>
+                          <div class="row" data-ng-init="getAllProvinces()">
+                              <label class="col-md-3 control-label">Địa chỉ:</label>
+                              <div class="col-md-9 row">
+                                  <select class="col-xs-5" id="ddlCountries" ng-model="province" ng-click='checkProvinces()'>
+                                      <option ng-repeat="itemGetAllProvinces in getAllProvinces" ng-click="getDistricts(itemGetAllProvinces.name)" value="{{itemGetAllProvinces.name}}">{{itemGetAllProvinces.name}}</option>
+                                  </select>
+                                  <select class="col-xs-5 col-xs-offset-2" ng-model="district" ng-click="checkdistrict()">
+                                      <option ng-show="showDistrict">{{district}}</option>
+                                      <option ng-repeat="itemDistricts in districts" value="{{itemDistricts.name}}">{{itemDistricts.name}}</option>
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <label class="col-xs-3 control-label"></label>
+                              <div class="col-xs-9" style="text-align: right;">
+                                  <button class="hvr-shutter-out-horizontal" ng-click="onUpdateProfile()">Lưu thay đổi</button>
+                              </div>
+                          </div>
+                      </article>
+                  </section>
+                  <!--/end:.personal_info-->
+                  <section class="updateAvatarTab hide ">
+                      <article>
+                          <h3 class="updateAvatar-header">Cập nhật ảnh đại diện</h3>
+                          <div class="upload-image">
+                              <ul id="listImage" class="row"></ul>
+                          </div>
+                          <span class="file-input hvr-shutter-out-horizontal btn-file">
+                                      Chọn hình&hellip; <input type="file" name="file" ng-files="uploadAvatar($files)" />
+                                  </span>
+                      </article>
+                  </section>
+                  <section class="UpdatePasswordTab hide">
+                      <article>
+                          <h3 class="updatePassword-header">Cập nhật mật khẩu</h3>
+                          <div class="row">
+                              <label class="col-sm-3 control-label">Mật khẩu cũ:</label>
+                              <div class="col-sm-9">
+                                  <input type="password" ng-model="oldPasswd" />
+                              </div>
+                          </div>
+                          <div class="row">
+                              <label class="col-sm-3 control-label">Mật khẩu mới:</label>
+                              <div class="col-sm-9">
+                                  <input type="password" ng-model="newPasswd" />
+                              </div>
+                          </div>
+                          <div class="row">
+                              <label class="col-sm-3 control-label">Nhập lại mật khẩu mới:</label>
+                              <div class="col-sm-9">
+                                  <input type="password" />
+                              </div>
+                          </div>
+                          <div class="row">
+                              <label class="col-xs-3 control-label"></label>
+                              <div class="col-xs-9" style="text-align: right;">
+                                  <button class="hvr-shutter-out-horizontal" ng-click="onChangePassword()">Cập nhật</button>
+                              </div>
+                          </div>
+                      </article>
+                  </section>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="modal fade" id="update-info" tabindex="-1" role="dialog" aria-hidden="true" style="margin-top: 10px;">
+      <div class="modal-dialog modal-sm">
+          <form role="form" name="forgotPassword">
+              <div class="modal-content">
+                  <div class="modal-body" style="text-align: center;">
+                      <div class="row">
+                          <label class="col-xs-12" style="font-size: 20px; margin-bottom: 20px; margin-top: 20px;">Bạn đã cập nhật thông tin thành công!</label>
+                          <div class="col-xs-12 ">
+                          </div>
+                          <a href="" type="button" class="hvr-shutter-out-horizontal" data-dismiss="modal">Đồng ý</a>
+                      </div>
+                      <!-- /.form group -->
+                  </div>
+              </div>
+              <!-- /.modal-content -->
+          </form>
+      </div>
+      <!-- /.modal-dialog -->
+  </div>
+  <div class="modal fade" id="update-password" tabindex="-1" role="dialog" aria-hidden="true" style="margin-top: 10px;">
+      <div class="modal-dialog modal-sm">
+          <form role="form" name="forgotPassword">
+              <div class="modal-content">
+                  <div class="modal-body" style="text-align: center;">
+                      <div class="row">
+                          <label class="col-xs-12" style="font-size: 20px; margin-bottom: 20px; margin-top: 20px;">Cập nhật mật khẩu thành công!</label>
+                          <div class="col-xs-12 ">
+                          </div>
+                          <a href="" type="button" class="hvr-shutter-out-horizontal" data-dismiss="modal">Đồng ý</a>
+                      </div>
+                  </div>
+              </div>
+              <!-- /.modal-content -->
+          </form>
+      </div>
+      <!-- /.modal-dialog -->
+  </div>
+</div>
+<script type="text/javascript">
+$(function() {
+    $(":file").change(function() {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = imageIsLoaded;
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+});
+
+function imageIsLoaded(e) {
+    $("#listImage").empty();
+    $("#listImage").append("<li class='col-xs-3'><img id='imgThumbnail' class='imgsize' src='#'/><div class='delete' onclick='removeImgThumbnail()';><span>x</span></div></li>");
+    $('#imgThumbnail').attr('src', e.target.result);
+
+};
+
+$("#listImage").on("click", "li", function() {
+
+});
+
+function removeImgThumbnail() {
+    $("#listImage").empty();
+}
+</script>

@@ -1,0 +1,111 @@
+<div class="festivals" ng-controller="festivalsController" ng-init="initData()">
+  <div class="box-input-search-festivals">
+    <img src="./assets/img/bg-festival.jpg" alt="" />
+    <div class="input-search-festival">
+      <h2>Thế giới lễ hội đặc sắc</h2>
+      <div>
+        <input type="text" ng-model="title" name="name" value="" placeholder="Tìm sự kiện, khóa học, khu vui chơi, ..." ng-keydown="$event.keyCode == 13 ? searchByTitle() : null"/>
+        <button type="button" name="button" ng-click="searchByTitle()"><i class="fa fa-search" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white">
+    <div class="container reset-grid">
+      <div class="festival-filter">
+        <div class="row">
+          <div class="col-sm-3 filter-selector">
+            <div class="custom-select w-100">
+              <i class="fa fa-map-marker before-icon" aria-hidden="true"></i>
+              <select ng-change="onFilterByLocation()" ng-model="location">
+                <option value="" ng-disabled="true">Chọn Địa Điểm</option>
+                <option value="2" >Thành Phố Hồ Chí Minh</option>
+                <option value="1">Hà Nội</option>
+                <option value="3">Địa điểm khác</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-sm-9 filter-collapse">
+            <div class="row">
+              <!--kind of event-->
+              <div class="col-sm-5 filter-selector">
+                  <div class="select-group w-100">
+                  <i class="fa fa-tasks before-icon" aria-hidden="true"></i>
+                  <i class="fa fa-caret-down after-icon" aria-hidden="true"></i>
+                  <div class="select-dropdown">
+                    <select class="select-skill" multiple="true" ng-model="types" ng-change="onFilterByType()">
+                       <option ng-repeat="category in categories" value="{{category._id}}">{{category.name}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <!--date range-->
+              <div class="col-sm-4 filter-selector">
+                <div class="custom-select w-100">
+                  <i class="fa fa-calendar before-icon" aria-hidden="true"></i>
+                  <select ng-change="onFilterByDate()" ng-model="date">
+                    <option value="" ng-disabled="true">Chọn Thời Gian</option>
+                    <option value="4">Tất cả các ngày sắp tới</option>
+                    <option value="1">Hôm nay</option>
+                    <option value="2">Ngày mai</option>
+                    <option value="3">Tuần này</option>
+                  </select>
+                </div>
+              </div>
+              <!--price-->
+              <div class="col-sm-3 filter-selector">
+                <div class="custom-select w-100">
+                  <i class="fa fa-usd before-icon" aria-hidden="true"></i>
+                  <select ng-change="onFilterByPrice()" ng-model="price">
+                    <option value="" ng-disabled="true">Chọn Giá Vé</option>
+                    <option value="3">Tất cả giá vé</option>
+                    <option value="1">Miễn phí</option>
+                    <option value="2">Có phí</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container clearfix">
+    <div class="row item-filter-festivals">
+      <div class="col-md-4 col-sm-6 col-xs-12"  ng-repeat="festival in festivals">
+        <div class="festival-item-base">
+            <div class="festival-img">
+                <a href="#/festival/{{festival._id}}"><img class="img-responsive" src="https://api.lehoiviet.vn{{festival.thumbnail.resize}}" /></a>
+            </div>
+            <div class="festival-info">
+                <div class="header row">
+                    <div class="">
+                        <div class="title"><a href="#/festival/{{festival._id}}">{{festival.title}}</a></div>
+                        <span class="price">
+                            Giá: <lable>Từ</lable> {{convertToCurrency(festival.priceTicket)}} VNĐ
+                        </span>
+                        <!-- <span class="price" ng-if="event.priceTicket===0">
+                          Giá: Miễn phí
+                        </span> -->
+                        <div><span class="address">{{festival.address.city}}</span></div>
+                    </div>
+                    <date data="festival.timeBegin"></date>
+                </div>
+            </div>
+        </div>
+      </div><!--End: festival-item-base-->
+    </div>
+      <div class="text-center" ng-show="currentPage < totalPages && isDefault" style="height: 80px;"><button class="btn-show-more" ng-click="showMore()"><i class="fa fa-angle-double-down" aria-hidden="true"></i></button></div>
+    <h2 class="text-center" style="margin: 30px 0" ng-show="festivals.length <= 0">Không có lễ hội bạn tìm kiếm</h2>
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+      $(".select-skill").select2({
+          placeholder: "Chọn loại sự kiện",
+          maximumSelectionLength: 2,
+          minimumResultsForSearch: 2
+      });
+});
+</script>

@@ -1,0 +1,12 @@
+<style type="text/css">
+.chat-box {
+    float: right;
+}
+</style>
+<div class="container">
+    <div class="chat-box">
+        <p>Bình luận</p> <strong ng-model="countUser">{{countUser}}</strong>
+        <div id="conversation" ng-model="conversation"></div>
+        <input ng-model="localMessage" id="data" style="width:200px;" code="13" dl-key-code="enterSendMessage();" />
+    </div>
+</div>

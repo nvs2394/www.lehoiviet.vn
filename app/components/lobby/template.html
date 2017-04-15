@@ -1,0 +1,32 @@
+<div id="postArticle">
+    <div class="head-title">
+        <p>{{title}}</p>
+    </div>
+    <div class="row">
+      <div id="upcomingFestivalLoader" class="col-xs-12" style="text-align: center;">
+          <img ng-show="!isLoaded" src="assets/img/fbloader.gif" />
+      </div>
+        <div class="col-sm-6 col-xs-12 " ng-repeat="event in events" >
+            <div class="festival-item-base">
+                <div class="festival-img">
+                    <a href="#/festival/{{event._id}}" title="{{event.title}}"><img class="img-responsive" src="https://api.lehoiviet.vn/{{event.thumbnail.resize}}" /></a>
+                </div>
+                <div class="festival-info">
+                    <div class="header row">
+                        <div class="">
+                            <div class="title"><a href="#/festival/{{event._id}}" class="{{event.title}}">{{event.title}}</a></div>
+                            <span class="price" ng-if="event.priceTicket!=0">
+                                Giá: <lable>Từ</lable> {{convertToCurrency(event.priceTicket)}} VNĐ
+                            </span>
+                            <span class="price" ng-if="event.priceTicket===0">
+                              Giá: Miễn phí
+                            </span>
+                            <div><span class="address">{{event.address.city}}</span></div>
+                        </div>
+                        <date data="event.timeBegin"></date>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

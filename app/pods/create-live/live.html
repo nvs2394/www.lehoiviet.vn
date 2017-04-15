@@ -1,0 +1,45 @@
+<br>
+<style type="text/css">
+#live-stream {}
+
+#live-stream localVideo video {
+    width: 320x;
+    height: 280px;
+}
+</style>
+<div class="container" id="live-stream">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-4">
+                <div class="localStream" ng-controller="LocalStreamController as localStream">
+                    <div class="row info-stream form-group">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" ng-disabled="localStream.disableShow" class="form-control" aria-describedby="emailHelp" placeholder="Tên luồng trực tiếp" ng-model="nameStream">
+                            </div>
+                            <div class="form-group">
+                                <select ng-disabled="localStream.disableShow" class="form-control" ng-model="festivalId">
+                                    <option value="{{festival._id}}" ng-repeat="festival in localStream.commingSoonFestival">{{festival.title}}</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row">
+                        <video id="streamPlayer" muted="muted" autoplay="true"></video>
+                    </div>
+                    <div class="row">
+                        <div ng-click="localStream.toggleCam()">
+                            <button class="btn btn-primary">{{ localStream.cameraIsOn ? 'Kết Thúc' : 'Trực tiếp' }}</button>
+                        </div>
+                        <div ng-show="localStream.cameraIsOn">
+                            <p>Chia sẻ:</p><a target="_blank" href="http://{{localStream.link}}">{{ localStream.link }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                 <strong>Người xem :</strong>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div id="top-member">
+  <div class="container" ng-init="initData()">
+          <p>Top thành viên</p>
+          <ul class="row item">
+              <li class="col-md-1 col-sm-1 col-xs-3" ng-repeat="member in $root.users">
+                  <a href="#/user/profile/{{member._id}}" ng-click="checkLoginSeeUser(member._id)" title="{{member.firstName}}">
+                      <div class="icon-user">
+                          <img class="img-responsive img-circle" src="{{member.avatar}}"/>
+                          <i class="fa fa-check-circle" aria-hidden="true" ng-show="member.status"></i>
+                      </div>
+                      <span>{{member.firstName}}</span>
+                  </a>
+              </li>
+              <li class="col-md-1 col-sm-1 col-xs-3">
+                  <a href="#/users">
+                      <div class="icon-user view-more">
+                          Top
+                      </div>
+                      Xem thêm
+                  </a>
+              </li>
+          </ul>
+  </div>
+</div>

@@ -1,0 +1,229 @@
+#profile {
+    .profile_area {
+        margin-top: 20px;
+        .user_left_page {
+            margin-top: 10px;
+            color: #333;
+            padding:5px;
+            .user-avatar {
+                text-align: center;
+                img {
+                    width: 160px;
+                    height: 160px;
+                }
+            }
+            .user-name-bar {
+                text-align: center;
+                h1 {
+                    font-weight: 700;
+                    line-height: 1.2em;
+                    padding-bottom: 5px;
+                    padding-top: 10px;
+                    font-size: 18px;
+                    margin: 0px;
+                }
+                a {
+                    color: #333;
+                }
+            }
+            .provinceName {
+                text-align: center;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            .accProfile_item {
+                &:hover {
+                    color: #111;
+                    cursor: pointer;
+                }
+                border-bottom: 1px solid #ddd;
+                color: #999;
+                display: block;
+                font-size: 12px;
+                padding: 10px 0;
+                text-decoration: none;
+            }
+            .accProfile_curent {
+                color: #333;
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: 12px;
+                padding: 7px 0;
+                text-decoration: none;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .fa-angle-right {
+                float: right;
+                font-size: 20px;
+            }
+            .fl-right {
+                float: right;
+                padding-right: 10px;
+            }
+        }
+        /*user_left_page*/
+        .center_cold {
+            color: #333;
+            padding: 5px;
+            #infoUser {
+                background-color: #fff;
+                border: 1px solid #eee;
+                border-radius: 3px;
+                margin-bottom: 15px;
+                padding: 10px;
+                .item-info {
+                    margin-top: 5px;
+                    margin-bottom: 10px;
+                    h2 {
+                        font-size: 14px;
+                        color: #444;
+                        font-weight: 600;
+                        border-bottom: 1px solid #eee;
+                        margin: 0 0 10px 0;
+                        padding: 5px 0 10px 0;
+                    }
+                }
+            }
+            #filter-review {
+                h2 {
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+            }
+            .micro-home-review-item {
+                background-color: #fff;
+                border: 1px solid #eee;
+                border-radius: 3px;
+                margin-bottom: 15px;
+                padding: 10px;
+                .review-header {
+                    h1 {
+                        margin: 0px;
+                    }
+                    .restitle {
+                        a {
+                            font-size: 14px;
+                            font-weight: 700;
+                            color: #444;
+                        }
+                    }
+                    .resaddress {
+                        color: #777;
+                        font-size: 11px;
+                        margin-bottom: 3px;
+                    }
+                    border-bottom: 1px solid #eee;
+                }
+                /*bdegin review*/
+                ul,
+                li {
+                    padding: 0px;
+                    margin: 0px;
+                    list-style: none;
+                    display: inline;
+                }
+                .desc {
+                    margin-bottom: 10px;
+                }
+                .title-desc {
+                    font-size: 14px;
+                    color: #444;
+                    font-weight: 600;
+                }
+                .photos {
+                    padding-bottom: 10px;
+                }
+                .timereview {
+                    color: #777;
+                    font-size: 11px;
+                }
+                img {
+                    width: 100%;
+                    border: 1px solid #fff;
+                    border-radius: 3px;
+                }
+                .picturecounts {
+                    background-color: #ddd;
+                    padding: 5px 10px;
+                    a {
+                        color: #333;
+                    }
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                }
+                .share {
+                    margin-top: 10px;
+                    a {
+                        color: #aaa;
+                        background-color: #fff;
+                        border: 1px solid #f0f0f0;
+                        border-radius: 3px;
+                        padding: 4px 10px;
+                        margin-right: 5px;
+                    }
+                    a:hover {
+                        color: #333;
+                        background-color: #ddd;
+                    }
+                }
+                .review-reply {
+                    .review-all-comment {
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                        a:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                    .review-reply-item {
+                        padding-bottom: 5px;
+                        padding-top: 5px;
+                        background: #f0f0f0 none repeat scroll 0 0;
+                        border-bottom: 1px solid #fff;
+                        .col-xs-11 {
+                            padding-left: 0px;
+                        }
+                        .review-reply-item-avatar {
+                            padding-top: 5px;
+                            text-align: center;
+                            img {
+                                width: 40px;
+                                border-radius: 40px;
+                            }
+                        }
+                        .review-reply-item-content {
+                            .user-link {
+                                padding-right: 5px;
+                            }
+                            a {
+                                color: #000;
+                                text-transform: capitalize;
+                            }
+                            a:hover {
+                                text-decoration: underline;
+                            }
+                            .address {
+                                font-size: 11px;
+                                padding-right: 5px;
+                            }
+                            .userlike,
+                            .glyphicon {
+                                color: #2fb8da;
+                            }
+                        }
+                        textarea {
+                            height: 47px;
+                            width: 100%;
+                            border: 1px solid #eee;
+                        }
+                    }
+                }
+                /*end*/
+            }
+        }
+        /*center_cold*/
+    }
+    /*profile_area*/
+}

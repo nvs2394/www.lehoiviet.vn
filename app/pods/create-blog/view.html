@@ -1,0 +1,116 @@
+
+<div id="postcontent" class="col-md-8 col-md-offset-2">
+    <form name="createPostForm">
+        <h1 class="static-header" ng-show="showInfo"><span class="glyphicon glyphicon-edit"></span> Blogs của bạn!</h1>
+        <h1 class="text-error static-header" ng-show="showError">Đăng bài bị lỗi</h1>
+        <div class="feedback-form">
+            <div class="feedback-notes">Hãy chia sẻ suy nghĩ của bạn với chúng tôi <b>Lehoiviet.vn</b></div>
+            <div class="feedback-table">
+                <section>
+                    <div class="infomation-box">
+                        <div class="infomation-name">Thông tin cơ bản</div>
+                        <div class="infomation-content row">
+                            <div class="box-info-normal">
+                                <div class="lable col-xs-3">Tiêu đề<span> *</span></div>
+                                <div class="details col-xs-9 row">
+                                    <input ng-model="title" type="text" class="col-xs-9" name="title" required="required" />
+                                </div>
+                                <div class="col-xs-9 col-xs-offset-3">
+                                    <span class="text-error" ng-show="createPostForm.title.$dirty && createPostForm.title.$invalid">
+                                        <span ng-show="createPostForm.title.$error.required">Nội dung</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end:infomation-content-->
+                        <div class="infomation-content row">
+                            <div class="box-info-normal">
+                                <div class="lable col-xs-3">Thông tin chi tiết<span> *</span></div>
+                                <div class="details col-xs-9 row">
+                                    <textarea ng-model="content" name="content" class="col-xs-9" lhv-editor  required="required"/>
+                                </div>
+                                <div class="col-xs-9 col-xs-offset-3">
+                                    <span class="text-error" ng-show="createPostForm.content.$dirty && createPostForm.content.$invalid">
+                                        <span ng-show="createPostForm.content.$error.required">Nội dung là bắt buộc</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end:infomation-content-->
+                        <div class="infomation-content row">
+                            <div class="box-info-normal">
+                                <div class="lable col-xs-3">Đăng ảnh bìa<span> *</span></div>
+                                <div class="details col-xs-9 row">
+                                    <div class="upload-image">
+                                        <ul id="listImage" class="row"></ul>
+                                    </div>
+                                    <div class="file-input btn btn-primary btn-file">
+                                        Chọn hình&hellip;
+                                        <input type="file" name="file" ng-files="getTheFiles($files)" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end:infomation-content-->
+                    </div>
+                    <!--end:infomation-box-->
+                </section>
+            </div>
+            <div class="row">
+                <button ng-click="postReview()" class="col-xs-12 create-festival btn btn-primary"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Thêm lễ hội</button>
+            </div>
+        </div>
+        <!--end:feedback-form-->
+    </form>
+    <!--end:form-->
+</div>
+
+<!--alert succes delete post-->
+<div class="modal fade" id="post-success" tabindex="-1" role="dialog" aria-hidden="true" style="margin-top: 10px;">
+    <div class="modal-dialog modal-sm">
+        <form role="form" name="forgotPassword">
+            <div class="modal-content">
+                <div class="modal-body" style="text-align: center;">
+                    <div class="row">
+                        <label class="col-xs-12" style="font-size: 20px; margin-bottom: 20px; margin-top: 20px;">Đăng bài thành công</label>
+                        <div class="col-xs-12 ">
+                        </div>
+                        <a href="/" type="button" class="btn btn-primary">Đồng ý</a>
+                    </div>
+                    <!-- /.form group -->
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </form>
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<script>
+
+//upload and display image
+$(function() {
+    $(":file").change(function() {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = imageIsLoaded;
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+});
+
+function imageIsLoaded(e) {
+    $("#listImage").empty();
+    $("#listImage").append("<li class='col-xs-4'><img id='imgThumbnail' class='imgsize' src='#'/><div class='delete' onclick='removeImgThumbnail()';><span>x</span></div></li>");
+    $('#imgThumbnail').attr('src', e.target.result);
+
+};
+
+$("#listImage").on("click", "li", function() {
+
+});
+
+function removeImgThumbnail() {
+    $("#listImage").empty();
+}
+</script>

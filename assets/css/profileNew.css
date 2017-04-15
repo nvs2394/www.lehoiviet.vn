@@ -1,0 +1,130 @@
+.templateUser {
+  padding: 10px 0;
+  /**/
+}
+.templateUser .borderBottom {
+  border-bottom: 1px solid #ddd;
+}
+.templateUser .user_left_page {
+  padding: 5px;
+  margin: 10px;
+  background-color: #fff;
+}
+.templateUser .user-avatar {
+  text-align: center;
+}
+.templateUser .user-avatar img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+.templateUser .user-name-bar {
+  text-align: center;
+}
+.templateUser .user-name-bar h4 {
+  font-size: 16px;
+}
+.templateUser .tabAction {
+  margin-top: 10px;
+}
+.templateUser .tabAction ul {
+  margin: 0;
+  padding: 0;
+}
+.templateUser .tabAction li {
+  list-style-type: none;
+}
+.templateUser .tabAction i {
+  margin-right: 10px;
+}
+.templateUser .tabAction a {
+  display: block;
+  padding: 5px;
+  font-size: 15px;
+  color: #333;
+  font-weight: bold;
+  transition: 0.4s;
+  border: 1px solid #fff;
+}
+.templateUser .tabAction a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #337ab7;
+  color: #fff;
+}
+.templateUser .tabAction .action {
+  background-color: #337ab7;
+  color: #fff;
+}
+.templateUser .tabAction .action:hover {
+  color: #fff;
+}
+.templateUser .infoTab section {
+  margin-top: 10px;
+}
+.templateUser .infoTab article,
+.templateUser .infoTab .infoUserTab {
+  padding: 20px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+.templateUser .infoTab .lastReviewTab h3,
+.templateUser .infoTab .lastBlogsTab h3,
+.templateUser .infoTab .profileEdit h3 {
+  font-size: 18px;
+  margin: 5px 0;
+}
+.templateUser .infoTab .lastReviewTab a:hover,
+.templateUser .infoTab .lastBlogsTab a:hover,
+.templateUser .infoTab .profileEdit a:hover {
+  text-decoration: none;
+  color: #f80;
+}
+.templateUser .infoTab .lastReviewTab .col-xs-12,
+.templateUser .infoTab .lastReviewTab .col-sm-10,
+.templateUser .infoTab .lastReviewTab .col-sm-2,
+.templateUser .infoTab .lastReviewTab .col-xs-4,
+.templateUser .infoTab .lastReviewTab .col-xs-8,
+.templateUser .infoTab .lastBlogsTab .col-xs-12,
+.templateUser .infoTab .lastBlogsTab .col-sm-10,
+.templateUser .infoTab .lastBlogsTab .col-sm-2,
+.templateUser .infoTab .lastBlogsTab .col-xs-4,
+.templateUser .infoTab .lastBlogsTab .col-xs-8,
+.templateUser .infoTab .profileEdit .col-xs-12,
+.templateUser .infoTab .profileEdit .col-sm-10,
+.templateUser .infoTab .profileEdit .col-sm-2,
+.templateUser .infoTab .profileEdit .col-xs-4,
+.templateUser .infoTab .profileEdit .col-xs-8 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.templateUser .infoTab .lastReviewTab img,
+.templateUser .infoTab .lastBlogsTab img,
+.templateUser .infoTab .profileEdit img {
+  width: 100%;
+  height: 300px;
+}
+.templateUser .infoTab .lastReviewTab .desc,
+.templateUser .infoTab .lastBlogsTab .desc,
+.templateUser .infoTab .profileEdit .desc {
+  position: relative;
+}
+.templateUser .infoTab .lastReviewTab .content,
+.templateUser .infoTab .lastBlogsTab .content,
+.templateUser .infoTab .profileEdit .content {
+  position: absolute;
+  bottom: -10px;
+  padding: 10px 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+.templateUser .videoYTTab iframe {
+  height: 300px;
+}
+
+.profileEdit .row {
+  margin-bottom: 10px;
+}
+.profileEdit .col-xs-3 {
+  padding-top: 7px;
+}

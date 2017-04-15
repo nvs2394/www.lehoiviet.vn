@@ -1,0 +1,41 @@
+<div class="bg-white">
+<div class="container">
+<section class="reset-password feedback-form infoUserTab">
+    <div>
+        <h3 class="text-center">Thay đổi mật khẩu</h3>
+        <span>{{alert}}</span>
+    </div>
+    <div class="infomation-box">
+        <form name='' novalidate="true">
+            <div class="infomation-content row">
+                <div class="box-info-normal">
+                    <div class="lable col-sm-3 col-xs-12">Mật khẩu mới</div>
+                    <div class="details col-sm-9 col-xs-12">
+                        <input type="password" ng-model="password"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="infomation-content row">
+                <div class="box-info-normal">
+                    <div class="lable col-sm-3 col-xs-12">Nhập lại mật khẩu</div>
+                    <div class="details col-sm-9 col-xs-12">
+                        <input type="password" ng-model="repassword"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="text-center">
+        <button class="btn-fix btn-blue" ng-click="rsPassword()">
+            <div ng-show="!isLoading">
+                Đổi mật khẩu
+            </div>
+            <div ng-show="isLoading">
+                <i class="fa fa-spinner" aria-hidden="true" style="animation: spin 1.5s infinite linear"></i>
+            </div>
+        </button>
+    </div>
+</section>
+</div>
+</div>

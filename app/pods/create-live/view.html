@@ -1,0 +1,58 @@
+<br>
+<style type="text/css">
+.live-comment {
+    float: right;
+}
+
+.live-comment .comment-item {
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+</style>
+<div class="container" id="live-stream" ng-controller="RemoteStreamsController as rtc">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <p>Bạn đang xem trực tiếp: {{rtc.stream.name}} </p>
+                <p>Thành viên : <a href="#">{{rtc.stream.userId.firstName}} {{rtc.stream.userId.lastName}}</a></p>
+                <p>Mã QR code: </p>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="remoteStreams">
+                        <div class="col-md-4" id="remoteVideosContainer"></div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <strong>Người xem : 123</strong>
+                    </div>
+                    <div class="row live-comment">
+                        <h3>Bình luận:</h3>
+                        <div class="comment-item">
+                            <p>Son Nguyen</p>
+                            <strong>anh em co ai tham gia khong vay</strong>
+                        </div>
+                        <div class="comment-item">
+                            <p>Son Nguyen</p>
+                            <strong>anh em co ai tham gia khong vay</strong>
+                        </div>
+                        <div class="comment-item">
+                            <p>Son Nguyen</p>
+                            <strong>anh em co ai tham gia khong vay</strong>
+                        </div>
+                        <div class="comment-item">
+                            <p>Son Nguyen</p>
+                            <strong>anh em co ai tham gia khong vay</strong>
+                        </div>
+                        <div class="comment-item">
+                            <p>Son Nguyen</p>
+                            <strong>anh em co ai tham gia khong vay</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>

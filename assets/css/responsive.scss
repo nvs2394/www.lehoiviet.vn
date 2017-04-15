@@ -1,0 +1,404 @@
+@media screen and (min-width:1200px) {
+    .featured-container .featured-img {
+        position: relative;
+        width: 100%;
+        height: 180px;
+        overflow: hidden
+    }
+}
+
+@media screen and (max-width:991px) {
+    .festival-item .infoPrice {
+        text-align: left;
+        padding-top: 8px;
+    }
+    /*---------------topmember---------------------*/
+    #top-member {
+        img {
+            width: 50px;
+        }
+        .icon-user{
+            width: 50px;
+            height: 50px;
+        }
+    }
+    /*---------------List user---------------------*/
+    #review-top-list {
+        img {
+            width: 55px !important;
+            margin-top: 5px;
+        }
+        .username {
+            a {
+                font-size: 15px !important;
+            }
+        }
+    }
+    /*---------------festival---------------------*/
+    #getAllFestival {
+        .loadMore {
+            margin-bottom: 10px !important;
+            margin-top: 10px !important
+        }
+        .guide-helper {
+            margin: 15px 0 !important;
+        }
+        .fa-3x {
+            font-size: 2em;
+        }
+        h4 {
+            font-size: 16px;
+            margin-top: 0;
+        }
+        p {
+            line-height: 16px;
+        }
+    }
+    /*article*/
+    /*#article {
+        .font15 {
+            font-size: 14px;
+        }
+        font-size: 14px;
+        h3,
+        .h3 {
+            font-size: 18px;
+        }
+        .actionUser {
+            margin-top: 10px;
+        }
+        .info-festival {
+            .content {
+                h3 {
+                    margin: 3px 0;
+                }
+                li {
+                    margin: 0;
+                }
+            }
+            .res-summary-point {
+                padding: 0;
+                .sumary-point {
+                    font-size: 15px;
+                }
+            }
+        }
+        .fontWeitgh600 {
+            font-weight: 500;
+        }
+        h2 {
+            font-size: 17px;
+            padding: 5px 0 5px 5px;
+        }
+        .imageFestival .imgContent img {
+            height: 100px;
+            width: 100%;
+        }
+        .imageFestival .imgContent .col-sm-3,
+        .imageFestival .imgContent .col-xs-2 {
+            margin: 5px 0;
+        }
+        .related-box .box img{
+            height: 160px;
+        }
+        .related-box .info{
+            padding: 5px;
+        }
+        .related-box .boxContent{
+            padding: 10px 0;
+        }
+    }*/
+}
+
+@media screen and (min-width:768px) and (max-width:1200px) {
+
+    /*----------------------------Home--------------------------------------*/
+    .festival-item {
+        .festival-info {
+            .header h3 {
+                font-size: 14px;
+            }
+            .infoPrice {
+                font-size: 11px;
+            }
+        }
+    }
+    .heading-title.heading-small h2 {
+        font-size: 15px;
+        font-weight: 600;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .navbar-default .navbar-toggle {
+        margin-top: 8px
+    }
+    .navbar-default .navbar-brand {
+        padding-top: 15px;
+        padding-bottom: 13px
+    }
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #888
+    }
+    .navbar-default .navbar-nav>li>a {
+        display: block;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 15px;
+        color: #898ba2
+    }
+    #menu .createPost {
+        margin-top: 10px;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a,
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus,
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover,
+    .navbar-default .navbar-nav li.dropdown.open>a,
+    .navbar-default .navbar-nav li.dropdown.open>a:hover {
+        color: #fff;
+        background-color: #39b3d7
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+        color: #898ba2;
+        padding-top: 12px;
+        padding-bottom: 12px
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
+        color: #fff;
+        background-color: #39b3d7
+    }
+    .dropdown-menu>li>a {
+        display: block;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 25px
+    }
+    .navbar-toggle {
+        margin-top: 10px
+    }
+    .navbar-brand {
+        padding-top: 10px
+    }
+    #header {
+        min-height: 450px;
+        height: auto;
+        padding-top: 140px
+    }
+    #header.heading {
+        padding-top: 40px;
+        min-height: 240px;
+        height: auto
+    }
+    #header h2 {
+        font-size: 24px
+    }
+    #header h1 {
+        font-size: 32px
+    }
+    #header .header-content,
+    #header.heading .header-content {
+        font-size: 16px;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 100px
+    }
+    #featured {
+        padding-top: 60px
+    }
+    .featured-container {
+        margin-bottom: 20px
+    }
+    .featured-container .featured-img {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        overflow: hidden
+    }
+    .featured-container .featured-img img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0 auto
+    }
+    .heading-title.heading-small h2 {
+        font-size: 17px;
+    }
+    .post-content img,
+    .post-img img,
+    .post-single img {
+        width: 100%;
+        height: 250px;
+    }
+    #copyright .copy-left,
+    #copyright .copy-right {
+        padding: 5px 0;
+        float: none;
+        text-align: center
+    }
+    #content,
+    #postArticle {
+        .col-xs-12 {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+    .head-title {
+        margin: 15px 0 0;
+        p {
+            font-size: 16px;
+            padding: 3px;
+        }
+    }
+    .main {
+        padding: 0 15px;
+    }
+    /*article*/
+    //#article {
+    //    .info-festival .content {
+    //        padding: 10px 0 0 0;
+    //    }
+    //    .imageFestival .imgContent img {
+    //        height: 180px !important;
+    //    }
+    //    .item-avatar img,
+    //    .user-link img {
+    //        width: 55px !important;
+    //        margin: 0 auto;
+    //    }
+    //    #post-common .panel-heading,
+    //    #post-common .panel-body {
+    //        padding: 5px;
+    //    }
+    //    .panel .col-xs-9 {
+    //        padding: 0px;
+    //    }
+    //    .related-box .box img{
+    //        height: 260px;
+    //    }
+    //}
+}
+
+@media screen and (max-width:662px) {
+    body {
+        font-size: 12px;
+    }
+    .main .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .body {
+        font-size: 12px;
+    }
+    .featured-container .featured-img {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        overflow: hidden
+    }
+    .festival-item .festival-img img,
+    .post-content img {
+        height: 190px;
+    }
+    #article .imageFestival .imgContent img{
+        height: 150px !important;
+    }
+    #article .related-box .box img{
+        height: 200px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .festival-item .festival-img img,
+    .post-content img {
+        height: 150px;
+    }
+    .festival-item .festival-info .header a,
+    .heading-title.heading-small h2 {
+        font-size: 14px;
+    }
+    .heading-title.heading-small h2 {
+        margin: 5px 0;
+    }
+    #copyright {
+        font-size: 12px;
+    }
+    /*List user*/
+    #top-member {
+        .container {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        ul {
+            padding: 0;
+        }
+    }
+    #review-top-list {
+        .container {
+            padding-right: 0;
+            padding-left: 0;
+        }
+        img {
+            width: 40px !important;
+        }
+        .username {
+            a {
+                font-size: 11px !important;
+            }
+        }
+    }
+    .badge {
+        font-size: 10px;
+    }
+    /*--------------------festival-----------------*/
+    #getAllFestival {
+        .container {
+            padding-right: 0;
+            padding-left: 0;
+        }
+        .guide-helper {
+            margin: 20px 0;
+            padding: 5px;
+        }
+        h3 {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .loadMore {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+    /*--------------------article-----------------*/
+    /*#article {
+        .info-festival img {
+            height: 250px;
+        }
+        h3 {
+            font-size: 16px;
+        }
+        .container {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        #post-common {
+            .col-xs-11 , .col-xs-12{
+                padding: 0;
+            }
+        }
+        .address {
+            display: none;
+        }
+        .related-box{
+            padding: 0;
+            .info{
+                padding: 5px;
+            }
+            .box a{
+                font-size: 14px;
+            }
+        }
+    }*/
+    .modal-footer, .modal-body, .modal-header{
+        padding: 5px;
+    }
+}

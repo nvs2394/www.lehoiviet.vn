@@ -1,0 +1,29 @@
+#review-top-list {
+  padding: 50px 0;
+  min-height: 50vh;
+}
+#review-top-list img {
+  width: 60px;
+}
+#review-top-list .username a {
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+#review-top-list .username a:hover {
+  text-decoration: none;
+  color: #f80;
+}
+#review-top-list .user-item {
+  margin-top: 10px;
+}
+#review-top-list .box-item {
+  padding: 5px 0;
+  background-color: #fff;
+  border: 1px solid #eee;
+}

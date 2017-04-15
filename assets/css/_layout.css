@@ -1,0 +1,383 @@
+#menu-container {
+  margin: 60px 15px 10px 15px;
+}
+#menu-container .navbar {
+  border-radius: 0px;
+}
+#menu-container .navbar-collapse {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+#menu-container .navbar-default {
+  background-color: #333;
+  border: none;
+}
+#menu-container .navbar-default .navbar-brand, #menu-container .navbar-default .navbar-nav > li > a {
+  color: #fff;
+  font-size: 12px;
+}
+#menu-container .hoatdong {
+  color: #3c8dbc !important;
+}
+
+ul, li {
+  list-style: none;
+}
+
+#post-decription {
+  display: block;
+  max-height: 340px;
+}
+#post-decription .main-image img {
+  width: 100%;
+  height: 340px;
+}
+#post-decription .main-info .brleft {
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+}
+#post-decription .main-info .padd-top-bottom {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+#post-decription .main-info .padd-top {
+  padding-top: 7px;
+}
+#post-decription .main-info .res-common-info {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#post-decription .main-info .res-common-info ul, #post-decription .main-info .res-common-info li {
+  display: inline;
+}
+#post-decription .main-info .res-common-info .main-info-title h1 {
+  font-size: 30px;
+  color: #333;
+}
+#post-decription .main-info .res-common-info .disableSection span {
+  margin-right: 5px;
+}
+#post-decription .main-info .res-common-info .res-summary-point {
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+#post-decription .main-info .res-common-info .res-summary-point .sumary-point {
+  font-size: 20px;
+  color: #3c8dbc;
+  font-style: bold;
+}
+#post-decription .main-info .res-common-info .res-summary-point .sumary-common {
+  font-size: 20px;
+  font-style: bold;
+  color: #333;
+}
+#post-decription .main-info .feature-gallery {
+  bottom: 0px;
+  padding-top: 10px;
+}
+#post-decription .main-info .feature-gallery ul, #post-decription .main-info .feature-gallery li {
+  padding: 0px;
+  margin: 0px;
+}
+#post-decription .main-info .feature-gallery .col-md-2 {
+  padding-right: 10px;
+}
+#post-decription .main-info .feature-gallery .featured-album-item img {
+  width: 100%;
+}
+
+#post-common {
+  margin: 0px 15px;
+}
+#post-common .microsite-box-heading {
+  cursor: point;
+  font-size: 20px;
+}
+#post-common #micro-button-bar {
+  padding-left: 15px;
+}
+#post-common #micro-button-bar ul, #post-common #micro-button-bar li {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  display: inline;
+}
+#post-common #micro-button-bar .res-common-ratting {
+  background-color: #fff;
+  padding: 20px;
+}
+#post-common #micro-button-bar .res-common-ratting .ratting-action span {
+  margin-right: 5px;
+  margin-left: 10px;
+}
+#post-common #micro-button-bar .res-common-ratting .ratting-action a {
+  color: #6b6e80;
+  background-color: #f4f4f4;
+  border: 1px solid #fff;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#post-common #micro-button-bar .col-md-3 {
+  text-align: center;
+}
+#post-common .microsite-sumary-new .microsite-box-rating-new {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  margin-top: 10px;
+}
+#post-common .microsite-sumary-new .microsite-box-rating-new .ratings-boxes .ratings-numbers {
+  text-align: center;
+}
+#post-common .microsite-sumary-new .microsite-box-rating-new .ratings-boxes .ratings-numbers span {
+  color: #6b6e80;
+  display: block;
+}
+#post-common .microsite-sumary-new .microsite-box-rating-new .ratings-boxes .ratings-numbers span b {
+  font-size: 22px;
+}
+#post-common .microsite-sumary-new .microsite-box-rating-new .ratings-boxes .ratings-boxes-points {
+  text-align: center;
+  padding-top: 10px;
+}
+#post-common .microsite-sumary-new .microsite-box-rating-new .ratings-boxes .ratings-boxes-points b {
+  font-size: 22px;
+  color: #03ae03;
+}
+#post-common .microsite-box {
+  /*#review-list*/
+}
+#post-common .microsite-box #resreviews #micro-review-filter {
+  background-color: #cce1f3;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#post-common .microsite-box #review-list {
+  margin-top: 20px;
+  /*.micro-home-recent-review*/
+}
+#post-common .microsite-box #review-list ul {
+  padding: 0px;
+  margin: 0px;
+}
+#post-common .microsite-box #review-list .col-md-11 {
+  padding-right: 0px;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review {
+  margin-top: 10px;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .leftimage {
+  padding-left: auto;
+  padding-right: auto;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .leftimage .microsite-review-new-avatar img {
+  border-radius: 30px;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc {
+  margin-top: 20px;
+  border-bottom: 1px solid #ddd;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .user {
+  height: 40px;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .user a {
+  color: #333;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .photos {
+  padding-bottom: 10px;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc img {
+  width: 100%;
+  border: 1px solid #fff;
+  border-radius: 3px;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .picturecounts {
+  background-color: #ddd;
+  padding: 5px 10px;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .picturecounts a {
+  color: #333;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .picturecounts a:hover {
+  text-decoration: underline;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .share {
+  margin-top: 10px;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .share a {
+  color: #aaa;
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 3px;
+  padding: 4px 10px;
+  margin-right: 5px;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .share a:hover {
+  color: #333;
+  background-color: #ddd;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .review-reply .review-all-comment {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .review-reply .review-all-comment a:hover {
+  text-decoration: underline;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .review-reply .review-reply-item {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  background: #f0f0f0 none repeat scroll 0 0;
+  border-bottom: 1px solid #fff;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .review-reply .review-reply-item .col-xs-11 {
+  padding-left: 0px;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .review-reply .review-reply-item .review-reply-item-avatar img {
+  width: 40px;
+  border-radius: 40px;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .review-reply .review-reply-item .review-reply-item-content .user-link {
+  padding-right: 5px;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .review-reply .review-reply-item .review-reply-item-content a {
+  color: #000;
+  text-transform: capitalize;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .review-reply .review-reply-item .review-reply-item-content a:hover {
+  text-decoration: underline;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .review-reply .review-reply-item .review-reply-item-content .address {
+  font-size: 11px;
+  padding-right: 5px;
+}
+#post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .review-reply .review-reply-item .review-reply-item-content .userlike, #post-common .microsite-box #review-list .micro-home-recent-review .rightdesc .review-reply .review-reply-item .review-reply-item-content .glyphicon {
+  color: #2fb8da;
+}
+#post-common .micro-whiterow {
+  margin: 20px 0px 20px 0px;
+}
+#post-common .micro-whiterow .microsite-box-album {
+  margin: 10px 0px 10px 0px;
+}
+#post-common .micro-whiterow .microsite-box-album .col-sm-3 {
+  padding: 0px;
+}
+#post-common .micro-whiterow .microsite-box-album .micro-home-album {
+  border: 3px solid #f4f4f4;
+}
+#post-common .micro-whiterow .microsite-box-album .micro-home-album img {
+  width: 100%;
+  border-radius: 3px;
+}
+#post-common .micro-whiterow .microsite-box-album .micro-home-album a {
+  padding-top: 10px;
+  color: #333;
+  font-size: 18px;
+}
+#post-common .micro-greyrow .row {
+  background-color: #333;
+}
+#post-common .micro-greyrow .col-sm-9, #post-common .micro-greyrow .col-sm-3 {
+  padding: 0px;
+}
+#post-common .micro-greyrow a {
+  color: #fff;
+}
+#post-common .micro-greyrow a:hover {
+  text-decoration: underline;
+}
+#post-common .micro-greyrow .microsite-box-info {
+  margin-top: 10px;
+}
+#post-common .micro-greyrow .microsite-box-info .microsite-map-add {
+  padding-top: 10px;
+}
+#post-common .micro-greyrow .microsite-box-info .microsite-map-add .col-xs-6 {
+  text-align: center;
+  padding: 0px;
+}
+#post-common .micro-greyrow .microsite-box-info .map-overdetail {
+  color: #bbb;
+  padding-top: 20px;
+  line-height: 1.5em;
+  font-size: 11px;
+}
+#post-common .micro-greyrow .microsite-box-info .map-overdetail .map-font {
+  color: #fff;
+  font-size: 12px;
+}
+#post-common .info-lehoi {
+  margin: 30px 0px 30px 0px;
+}
+#post-common .info-lehoi ul, #post-common .info-lehoi li {
+  padding: 0px;
+}
+#post-common .info-lehoi li {
+  background: transparent url("http://static.foody.vn/style/images/icons/special-list-icon.png") no-repeat scroll 0 2px;
+  line-height: 1.7em;
+  padding-left: 20px;
+}
+
+.festival-item {
+  margin-top: 10px;
+  background-color: #fff;
+  color: #555;
+  border-radius: 5px;
+  border: 1px solid #eee;
+}
+.festival-item .col-xs-12 {
+  padding: 0px;
+}
+.festival-item .festival-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.festival-item .festival-img a {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  display: block;
+}
+.festival-item .festival-img img {
+  width: auto;
+  height: 200px;
+}
+.festival-item .festival-info {
+  padding: 10px;
+  padding: 10px;
+}
+.festival-item .festival-info .col-xs-3 {
+  padding: 0px;
+  text-align: center;
+}
+.festival-item .festival-info ul {
+  margin: 0px;
+  padding: 0px;
+}
+.festival-item .festival-info li {
+  list-style: none;
+}
+.festival-item .festival-info .header {
+  margin-bottom: 5px;
+}
+.festival-item .festival-info .header i {
+  margin-top: 5px;
+  font-size: 35px;
+  color: #c7c4b7;
+}
+.festival-item .festival-info .header h3 {
+  margin: 0px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #337ab7;
+  line-height: 150%;
+}
+.festival-item .festival-info .price {
+  background-color: #fe8802;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+}

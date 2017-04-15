@@ -1,0 +1,394 @@
+<!--<div id="upcomingFestivalLoader" class="col-xs-12" style="text-align: center;">-->
+    <!--<img ng-show="!isLoaded" src="assets/img/fbloader.gif" />-->
+<!--</div>-->
+<style>
+.cropArea {
+  background: transparent;
+  overflow: hidden;
+  width:100%;
+  height: 300px;
+}
+</style>
+
+<div id="article" ng-init="initData()">
+    <div class="info-festival bg-white">
+        <div class="thumbnail-article">
+            <img ng-src="https://api.lehoiviet.vn/{{festival.thumbnail.resize}}" />
+        </div>
+        <div class="container" data-ng-init="getReview()">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="content">
+                        <span>DANH MỤC: {{festival.typeEvent.name}}</span>
+                        <h3>{{festival.title}}</h3>
+                        <p class="address"><i class="fa fa-map-marker" aria-hidden="true" style="margin-right: 5px"></i> {{festival.address.mainAddress}} , {{festival.address.district}}, {{festival.address.city}}</p>
+                        <!-- <div class="boderTop"></div> -->
+                        <div class="res-summary-point row padd-top-bottom">
+                            <div class="sumary col-sm-3 col-xs-6">
+                                <div class="sumary-point">
+                                    <span>{{festival.statistic.views}}</span>
+                                </div>
+                                <div class="sumary-function">Lượt xem</div>
+                            </div>
+                            <div class="sumary col-sm-3 col-xs-6">
+                                <div class="sumary-point">
+                                    <span>{{festival.statistic.likes}}</span>
+                                </div>
+                                <div class="sumary-function">Yêu thích</div>
+                            </div>
+                            <div class="sumary col-sm-3 col-xs-6">
+                                <div class="sumary-point">
+                                    <span>{{festival.statistic.rating.isRating}}</span>
+                                </div>
+                                <div class="sumary-function">Đánh giá</div>
+                            </div>
+                            <div class="sumary col-sm-3 col-xs-6 brleft">
+                                <div class="sumary-common">
+                                    <span>{{festival.statistic.comments}}</span>
+                                </div>
+                                <div class="sumary-function">Bình luận</div>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>
+                                <span class="glyphicon glyphicon-time" aria-hidden="true" style="margin-right: 5px;"></span> {{festival.timeBegin}} <span style="margin: 0 3px">-</span> {{festival.timeEnd}}
+                            </li>
+                            <li>
+                                <span class="glyphicon glyphicon-usd" aria-hidden="true" style="margin-right: 5px;"></span> {{festival.priceTicket == 0 ? 'Miễn Phí' : convertToCurrency(festival.priceTicket) + ' VNĐ'}}
+                            </li>
+                            <li>
+                                <span class="glyphicon glyphicon-globe" aria-hidden="true" style="margin-right: 5px;"></span> {{festival.contactInfo.website}}
+                            </li>
+                            <li>
+                                <span class="glyphicon glyphicon-envelope" aria-hidden="true" style="margin-right: 5px;"></span> {{festival.contactInfo.emailAddress}}
+                            </li>
+                            <li>
+                                <span class="glyphicon glyphicon-earphone" aria-hidden="true" style="margin-right: 5px;"></span> {{convertToNumberPhone(festival.contactInfo.phoneNumber)}}
+                            </li>
+                            <li>
+                                <!--<button class="btn-blue btn-xs" ng-click="share(festival._id,festival.title,festival.thumbnail.imgName,festival.description,festival.userId.firstName)">-->
+                                    <!--<i class="fa fa-facebook-square"></i> Chia sẻ</button>-->
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4 content">
+                    <h5>Cộng Tác Viên Live Stream</h5>
+                    <div class="user-stream-video">
+                        <a ng-repeat="user in usersCanStream" href="#/user/profile/{{user.userId._id}}"><img ng-src="{{user.userId.avatar}}" alt=""></a>
+                    </div>
+                    <h5>Đánh giá</h5>
+                    <div class="clearfix" ng-show="point <= 0">
+                        <select id="rating-bar" name="rating"  autocomplete="off" ng-model="point" ng-change="onRate()">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="clearfix" ng-show="point > 0">
+                        <select id="rating-bar-rated" name="rating" ng-show="point > 0" autocomplete="off">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="actionUser">
+                      <div class="actionUser">
+                          <a href="" ng-click="onSubscribe()" title="Lên lịch" class=""><i class="fa fa-rss" aria-hidden="true"></i></a>
+                          <a href="" ng-click="onLike()" title="Like bài viết"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a>
+                          <a href="" ng-click="postVideo()" title="Thêm video Youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                          <a href="" ng-click="onStream()" title="Live stream" ng-show="isCanStream()"><i class="fa fa-video-camera"></i></a>
+                          <a href="" ng-click="onShareFacebook()" title="Share Facebook" data-target="popup" id="sharebutton"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                          <a href="" ng-click="onRegisterStream()" title="Register Stream" ng-show="!isCanStream()" ><i class="fa fa-user-o" aria-hidden="true"></i></a>
+                          <!-- <div class="fb-share-button" data-href="https://lehoiviet.vn#/festival/{{festivalId}}" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flehoiviet.vn%2F&amp;src=sdkpreparse">Chia sẻ</a></div> -->
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="maintenance" class="modal fade" tabindex="-1" role="dialog" id="searchbox">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h3> Chức Năng Này Đang Được Bảo Trì </h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="introduce bg-white">
+        <div class="container">
+            <section class="list-info">
+                <div class="item description">
+                    <h3><i class="fa fa-info-circle focus" aria-hidden="true"></i>Thông tin sự kiện</h3>
+                    <div class="content" ng-bind-html="festival.content">
+
+                    </div>
+                    <div class="event" >
+                        <h2 class="text-left">Sự kiện diễn ra</h2>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                      <th>Ngày bắt đầu</th>
+                                      <th>Thời gian bắt đầu</th>
+                                      <th>Ngày kết thúc</th>
+                                      <th>Thời gian kết thúc</th>
+                                      <th>Hoạt động</th>
+                                    </tr>
+                                </thead>
+                                <tboody>
+                                    <tr ng-repeat="event in events">
+                                        <td>{{event.dateBegin}}</td>
+                                        <td>{{event.timeBegin}}</td>
+                                        <td>{{event.dateEnd}}</td>
+                                        <td>{{event.timeEnd}}</td>
+                                        <td>{{event.name}}</td>
+                                    </tr>
+                                </tboody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <h3><i class="fa fa-picture-o" aria-hidden="true"></i></i>Hình ảnh và Video</h3>
+                    <div class="content">
+                        <h4>Hình ảnh</h4>
+                        <div class="row list-img-article">
+                            <h5 class="text-center" style="margin: 30px 0" ng-show="album.length <= 0">Chưa có hình ảnh nào</h5>
+                            <img ng-repeat="img in album" ng-click="watchSlide(img.imgName)"class="col-xs-2" src="https://api.lehoiviet.vn/{{img.imgName}}" alt=""/>
+                        </div>
+                        <h4>Video live stream</h4>
+                        <div class="list-img-article clearfix">
+                            <div class="item-liveStream" ng-repeat="stream in streams" ng-click="watchVideo(stream.streamId)">
+                                <img  class="" src="assets/img/gif-bg.gif" alt=""/>
+                                <div class="info-user-live">
+                                    <a href="">{{stream.userId.firstName}}{{stream.userId.lastName}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <h3><i class="fa fa-thumb-tack" aria-hidden="true" style="padding-left: 16px;"></i></i>Vị trí</h3>
+                    <div class="content">
+                       <ng-map zoom="17" center="{{location}}">
+                         <marker position="{{location}}" title="how" animation="Animation.BOUNCE"></marker>
+                       </ng-map>
+                    </div>
+                </div>
+                <div class="item">
+                    <h3><i class="fa fa-commenting" aria-hidden="true"></i>Bình luận</h3>
+                    <div class="content"  ng-keydown="$event.keyCode == 13 ? onSubmitComment() : null">
+                        <div class="comment-box">
+                            <div class="row">
+                                <!-- <div class="col-sm-1 comment-author-thumnail"><img src="./assets/img/avatar.png" alt="" class="img-circle img-responsive"></div> -->
+                                <div class="col-sm-11">
+                                    <textarea name="" class="form-control" ng-model="comment" placeholder="Nhập bình luận của bạn..."></textarea>
+                                    <div class="comment-render-image clearfix">
+                                        <a href="" class="edit-image" ng-repeat="img in displayImages"><img ng-src={{img}} alt="" /><span ng-click="onDeleteImage(img)">x</span></a>
+                                        <a href="" class="btn-add-image" ng-click="onUploadImage()"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                                    </div>
+                                    <div class="text-right">
+                                      <button type="button" class="btn-blue btn-fix" ng-click="onSubmitComment()">
+                                        <div ng-show="!isPostingComment">
+                                          Bình luận
+                                        </div>
+                                        <div ng-show="isPostingComment">
+                                          <i class="fa fa-spinner" aria-hidden="true" style="animation: spin 1.5s infinite linear"></i>
+                                        </div>
+                                      </button>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comment-render">
+                            <p>Bình luận hàng đầu</p>
+                            <div class="row item" ng-repeat="cmt in comments">
+                                <div class=" col-sm-1 comment-author-thumnail">
+                                    <img ng-src="{{cmt.userId.avatar}}" alt="" class="img-responsive">
+                                </div>
+                                <div class="col-sm-11 comment-render-content">
+                                    <div class="commen-render-header">
+                                        <a ng-href="#/user/profile/{{cmt.userId._id}}">{{cmt.userId.firstName}} {{cmt.userId.lastName}}</a>
+                                        <span style="color:green">{{dateHelper.convertToAgo(cmt.createAt)}}</span>
+                                        <button ng-show="$root.uid == cmt.userId._id" class="close" ng-click="onEditableMode(cmt._id, cmt.content)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                        <button ng-show="$root.uid == cmt.userId._id" class="close" ng-click="onDeleteComment(cmt._id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                    </div>
+                                    <div class="comment-render-text">
+                                        <p ng-show="editable !== cmt._id">{{cmt.content}}</p>
+                                        <textarea ng-show="editable == cmt._id" ng-model="editableContent[cmt._id]" ng-init="editableContent[cmt._id] = cmt.content" class="form-control" placeholder="Nhập bình luận của bạn..."></textarea>
+                                        <div class="comment-render-image clearfix">
+                                          <a href="" class="edit-image" ng-repeat="img in cmt.imageId">
+                                            <img ng-src="https://api.lehoiviet.vn/{{img.imgName}}" alt="" />
+                                            <span ng-show="editable == cmt._id" ng-click="onDeleteImageEditableMode(cmt, img)">x</span>
+                                            <div id="delete-image-editable" class="modal fade " tabindex="-1" role="dialog">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body text-center">
+                                                            <h4>Bạn có muốn xóa hình này?</h4>
+                                                            <button type="button" class="btn-gray" ng-click="onRejectRemoveEditable()">Không</button>
+                                                            <button type="button" class="btn-blue" ng-click="onAcceptRemoveEditable(cmt, img)">Đồng Ý</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                          </a>
+                                          <a href="" ng-show="editable == cmt._id" class="edit-image" ng-repeat="alternativeImage in editableDisplayImages"><img ng-src={{alternativeImage}} alt="" /><span ng-click="onDeleteImageEditableMode(null, alternativeImage)">x</span></a>
+                                          <a href="" ng-show="editable == cmt._id" class="btn-add-image" ng-click="onUploadEditableImage()"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                    <div ng-show="editable == cmt._id" class="text-right">
+                                      <button type="button" class="btn-blue btn-fix" ng-click="onUpdateComment(cmt._id)">
+                                        <div ng-show="!isPostingComment">
+                                          Cập Nhật
+                                        </div>
+                                        <div ng-show="isPostingComment">
+                                          <i class="fa fa-spinner" aria-hidden="true" style="animation: spin 1.5s infinite linear"></i>
+                                        </div>
+                                      </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div id="slideImage" class="modal fade " tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" data-dismiss="modal" aria-label="Close"><i class="fa fa-times-circle" aria-hidden="true"></i>
+                    </button>
+                    <img src="https://api.lehoiviet.vn{{shownImage}}" alt=""/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="watchVideo" class="modal fade" tabindex="-1" role="dialog">
+        <div  class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" id="body-player">
+                    <!-- <button type="button" data-dismiss="modal" aria-label="Close"><i class="fa fa-times-circle" aria-hidden="true"></i></button> -->
+                    <div class="youtube-player" id="remoteVideosContainer"></div>
+                    <!-- <iframe id="yt-player" title="YouTube video player" class="youtube-player" type="text/html" width="100%" ng-src="{{srcVideo | trustAsResourceUrl}}" frameborder="0" allowFullScreen></iframe> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="postVideo" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Nhập link video</h4>
+                </div>
+                <div class="modal-body">
+                    <h5 class="checkErroLink" style="color: #c00">Link nhập chưa chính xác</h5>
+                    <input type="text" name="linkYoutube" class="form-control" ng-model="urlVideo">
+                </div>
+                <div class="modal-footer" style="text-align: right">
+                    <button type="Submit" class="btn-blue" ng-click="postVideoYT()">Gửi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="upImage" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="margin-upload">
+                        <span class="file-input btn-file btn-upload-custom">
+                          <i class="fa fa-plus" aria-hidden="true"></i> Tải ảnh lên <input type="file" name="file" onchange="angular.element(this).scope().onImageSelected(this)" />
+                      </span>
+                    </div>
+                    <div ng-show="isUploading" class="text-center">
+                      <i class="fa fa-spinner" aria-hidden="true" style="animation: spin 1.5s infinite linear; font-size: 50px; display:inline-block; margin: 20px auto;"></i>
+                    </div>
+                    <div class="cropArea" ng-show="!isUploading">
+                        <img-crop area-type="square" image="image" result-image="myCroppedImage"></img-crop>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <button type="Submit" data-dismiss="modal">Hủy</button>
+                    <button type="Submit" ng-click="onAddImage()">Hoàn tất</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="upEditableImage" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="margin-upload">
+                        <span class="file-input btn-file btn-upload-custom">
+                          <i class="fa fa-plus" aria-hidden="true"></i> Tải ảnh lên <input type="file" name="file" onchange="angular.element(this).scope().onEditableImageSelected(this)" />
+                      </span>
+                    </div>
+                    <div ng-show="isUploading" class="text-center">
+                      <i class="fa fa-spinner" aria-hidden="true" style="animation: spin 1.5s infinite linear; font-size: 50px; display:inline-block; margin: 20px auto;"></i>
+                    </div>
+                    <div class="cropArea" ng-show="!isUploading">
+                        <img-crop area-type="square" image="editableImage" result-image="myEditableCroppedImage"></img-crop>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <button type="Submit" data-dismiss="modal">Hủy</button>
+                    <button type="Submit" ng-click="onAddEditableImage()">Hoàn tất</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="delete-image" class="modal fade " tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <h4>Bạn có muốn xóa hình này?</h4>
+                    <button type="button" class="btn-gray" ng-click="onRejectRemove()">Không</button>
+                    <button type="button" class="btn-blue" ng-click="onAcceptRemove()">Đồng Ý</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="duplicated-image" class="modal fade " tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <h4>Có lẽ hình này đã tồn tại</h4>
+                    <button type="button" class="btn-gray" ng-click="closeImmediately()">Hủy Tải Lên</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+$(function() {
+    $("html, body").stop().animate({scrollTop:0}, '2000', 'swing');
+
+    $("#imageCarousel").carousel({
+        interval: false
+    });
+});
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
+$('#rating-bar').barrating({
+    theme: 'bootstrap-stars',
+    showSelectedRating: false
+});
+</script>

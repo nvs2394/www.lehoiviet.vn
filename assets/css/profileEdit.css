@@ -1,0 +1,77 @@
+#profile_edit {
+  margin-top: 20px;
+  /*accProfile_left*/
+  /*accProfile_left*/
+}
+
+#profile_edit .accProfile_left {
+  margin-top: 10px;
+}
+
+#profile_edit .accProfile_left .accProfile_left_pro a {
+  color: #222;
+  border-bottom: 1px solid #ddd;
+}
+
+#profile_edit .accProfile_left .accProfile_left_pro img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+#profile_edit .accProfile_left .accProfile_left_pro span {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#profile_edit .accProfile_left .itemTab, #profile_edit .accProfile_left a {
+  border-bottom: 1px solid #eee;
+  color: #999;
+  display: block;
+  font-size: 13px;
+  padding: 10px 0 10px 0;
+  text-decoration: none;
+}
+
+#profile_edit .accProfile_left .accProfile_item:hover {
+  color: #111;
+}
+
+#profile_edit .accProfile_left .accProfile_curent {
+  color: #333;
+}
+
+#profile_edit .accProfile_left .fa-angle-right {
+  float: right;
+  font-size: 20px;
+}
+
+#profile_edit .accProfile_right {
+  color: #333;
+  /*personal_info*/
+}
+
+#profile_edit .accProfile_right .account-edit-profile-header, #profile_edit .accProfile_right .updateAvatar-header, #profile_edit .accProfile_right .updatePassword-header {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+#profile_edit .accProfile_right .personal_info, #profile_edit .accProfile_right #updateAvatar, #profile_edit .accProfile_right #updatePassword {
+  margin-top: 10px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#profile_edit .accProfile_right .personal_info select, #profile_edit .accProfile_right #updateAvatar select, #profile_edit .accProfile_right #updatePassword select {
+  border-radius: 2px;
+  border: 1px solid #ddd;
+  padding: 5px;
+}

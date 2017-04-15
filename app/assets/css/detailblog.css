@@ -1,0 +1,158 @@
+#allBlog {
+  /* The Modal (background) */
+  /* Add Animation */
+  /* The Close Button */
+  /* img {
+        border-radius: 5px 5px 0 0;
+    } */
+  /*CSS comment*/
+}
+
+#allBlog #thumnailBlog {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#allBlog #thumnailBlog:hover {
+  opacity: 0.7;
+}
+
+#allBlog #caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+#allBlog #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+#allBlog .close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#allBlog .close:hover,
+#allBlog .close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#allBlog .card {
+  transition: 0.3s;
+  border-radius: 5px;
+  background: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+#allBlog .card img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+}
+
+#allBlog .card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+#allBlog .card-info {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#allBlog .container {
+  padding: 2px 16px;
+}
+
+#allBlog .micro-home-recent-review {
+  padding-right: 5px;
+  margin-top: 5px;
+}
+
+#allBlog .micro-home-recent-review .col-sm-2,
+#allBlog .micro-home-recent-review .col-sm-10,
+#allBlog .micro-home-recent-review .col-xs-2,
+#allBlog .micro-home-recent-review .col-xs-10 {
+  padding: 0px;
+}
+
+#allBlog .micro-home-recent-review .panel {
+  margin-top: 10px;
+  position: relative;
+}
+
+#allBlog .micro-home-recent-review .panel > .panel-heading:after,
+#allBlog .micro-home-recent-review .panel > .panel-heading:before {
+  position: absolute;
+  top: 10px;
+  left: -16px;
+  right: 100%;
+  width: 0;
+  height: 0;
+  display: block;
+  content: " ";
+  border-color: transparent;
+  border-style: solid solid outset;
+  pointer-events: none;
+}
+
+#allBlog .micro-home-recent-review .panel > .panel-heading:after {
+  border-width: 7px;
+  border-right-color: #f7f7f7;
+  margin-top: 1px;
+  margin-left: 2px;
+}
+
+#allBlog .micro-home-recent-review .panel > .panel-heading:before {
+  border-right-color: #ddd;
+  border-width: 8px;
+}
+
+#allBlog .micro-home-recent-review .leftimage {
+  text-align: center;
+}
+
+#allBlog .micro-home-recent-review .leftimage .microsite-review-new-avatar {
+  margin-top: 10px;
+}
+
+#allBlog .micro-home-recent-review .leftimage .microsite-review-new-avatar img {
+  width: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}

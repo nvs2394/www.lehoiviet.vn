@@ -1,0 +1,94 @@
+<div id="menu" ng-init="init()">
+  <nav class="navbar navbar-fixed-top menu-fix-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#/"><img src="assets/img/logo150x40.png" alt="" /></a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav menu-left">
+          <li><a href="#/festivals" class="hover-menu">Lễ hội</a></li>
+          <li ng-click="onMaintenance()"><a  class="hover-menu">Video</a></li>
+          <li><a href="#/lives" class="video-live">Trực tiếp</a></li>
+        </ul>
+          <ul class="nav navbar-nav navbar-right">
+                <li ng-show="$root.token != null"><a class="menu-create-post" ng-click="createFestivalView()"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+                <li class="dropdown notify" ng-show="$root.token != null">
+                    <a class="dropdown-toggle btn-notify" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-video-camera" aria-hidden="true"></i>
+                        <span ng-show="unread">new</span>
+                      </a>
+                      <ul class="dropdown-menu"  ng-click="onReadStreamNotification()">
+                          <li class="notification-message-item" ng-repeat="notification in $root.notificationsForReplyingRequestStream">
+                            <a class="clearfix" href="#/festival/{{notification.id}}">
+                              <div class="thumnail">
+                                <img ng-src="https://api.lehoiviet.vn{{notification.thumbnail}}" alt="" />
+                              </div>
+                              <div class="message">
+                                <p>{{notification.title}}</p>
+                                <span class="span-first" ng-show="notification.enable">BẠN ĐƯỢC PHÉP LIVE</span>
+                                <span class="span-last" ng-show="!notification.enable">BẠN KHÔNG ĐƯỢC PHÉP LIVE</span>
+                              </div>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#" style="display:block; text-align:center; padding: 5px" ng-show="$root.notification.length > 10">Xem thêm</a>
+                          </li>
+                      </ul>
+                </li>
+                <li class="dropdown notify" ng-show="$root.token != null">
+                  <a class="dropdown-toggle btn-notify" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell" aria-hidden="true"></i>
+                      <span ng-show="$root.notification.unseen > 0">{{$root.notification.unseen}}</span></a>
+                  <ul class="dropdown-menu">
+                      <li class="notification-message-item" ng-repeat="festival in $root.notification">
+                        <a class="clearfix" href="#/festival/{{festival.data._id}}" ng-click="onClickNotification()">
+                          <div class="thumnail">
+                            <img ng-src="https://api.lehoiviet.vn{{festival.data.thumbnail.full}}" alt="" />
+                          </div>
+                          <div class="message">
+                            <p>{{festival.data.title}}</p>
+                            <span color='red'>SẮP DIỄN RA</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" style="display:block; text-align:center; padding: 5px" ng-show="$root.notification.length > 10">Xem thêm</a>
+                      </li>
+                  </ul>
+              </li>
+                <li ng-show="$root.token != null">
+                <a class="menu-avatar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ng-click="actionUserPanel()">
+                  <img ng-src="{{$root.avatar}}" alt="" />
+                </a>
+              </li>
+              <li><a class="btn-login" type="button" ng-click="loginView()" ng-show="$root.token == null">Đăng Nhập</a></li>
+          </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+    <div id="maintenance" class="modal fade" tabindex="-1" role="dialog" id="searchbox">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h3> Chức Năng Này Đang Được Bảo Trì </h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$('ul.nav li.dropdown').hover(function() {
+  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
+}, function() {
+  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
+});
+</script>
+<!-- inject other component -->
+<user-handler></user-handler>

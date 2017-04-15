@@ -1,0 +1,397 @@
+<div ng-init="initData()">
+<!-- <div id="mainpost"> -->
+<div id="post-create">
+    <h5 class="alert-funtion" ng-show="showAlert">Chức năng này chỉ hỗ trợ trên máy tính</h5>
+  <div class="profile_area">
+      <!-- left column -->
+      <div class="sidebar">
+          <div class="tabAction">
+            <div class="question-user"><a href=""><i class="fa fa-question-circle" aria-hidden="true"></i></a></div>
+              <ul class="infoList">
+                <li class="action" id="eventPost" ng-click="onChangeTab('eventPost')">
+                    <span>1</span>Thông tin sự kiện
+                </li>
+                <li id="detailPost"  ng-click="onChangeTab('detailPost')">
+                    <span>2</span>Thông tin chi tiết
+                </li>
+                <li id="last" class="onhover" ng-click="onChangeTab('last')">
+                    <span>3</span>Thông tin nhà tổ chức
+                </li>
+              </ul>
+          </div>
+      </div>
+      <!-- edit form column -->
+      <div class="infoTab">
+          <!--<div class="thumbLoading">-->
+              <!--<div class="content">-->
+                  <!--<i class="fa fa-spinner" aria-hidden="true" style="animation: spin 1.5s infinite linear"></i>-->
+              <!--</div>-->
+          <!--</div>-->
+          <section class="eventPostTab feedback-form infoUserTab">
+              <div class="imageHeader">
+                <img ng-src="https://api.lehoiviet.vn{{backgroundImage}}" alt="" class="img-responsive" imageonload="onImageUploaded()"/>
+                <div class="bg-tran"></div>
+                <div class="btn-position-upload" ng-show="!isUploading">
+                  <div class="file-input btn-load-image btn-file">
+                      <i class="fa fa-camera" aria-hidden="true"></i>
+                      Tải ảnh bìa lên&hellip;
+                      <input type="file" name="file" onchange="angular.element(this).scope().onImageSelected(this)" />
+                  </div>
+                </div>
+                <div class="btn-position-upload" ng-show="isUploading">
+                    <div class="img-loading">
+                        <span class="loading"></span>
+                    </div>
+                </div>
+              </div>
+
+                <div class="infomation-box">
+                  <form name="info" novalidate="true">
+                    <div class="infomation-content">
+                        <div class="box-info-normal row">
+                            <div class="lable col-sm-3 col-xs-12">Tên lễ hội</div>
+                            <div class="details col-sm-9 col-xs-12">
+                                <input ng-model="festival.title" type="text" name="title" spellcheck="false" placeholder="ví dụ: lễ hội bắn pháo hoa" ng-minlength='10' required="true"/>
+                            </div>
+                            <div class="col-sm-9 col-sm-offset-3 col-xs-12">
+                                <span class="text-error" ng-show="info.title.$dirty && info.title.$invalid">
+                                    <span ng-show="info.title.$error.minlength" class="text-error">bạn phải nhập ít nhất 10 kí tự</span>
+                                    <span ng-show="info.title.$error.required" class="text-error">vui lòng lưu lại nếu bạn muốn bỏ trống</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infomation-content row">
+                        <div class="box-info-normal">
+                            <div class="lable col-sm-3 col-xs-12">Loại lễ hội</div>
+                            <div class="details col-sm-9 col-xs-12">
+                                <select class="col-sm-4 col-xs-12" name="typeEvent" ng-model="festival.typeEvent" ng-change="onChangeValidateInfoTab()" convert-to-number>
+                                    <option value="" ng-disabled="true">Chọn Loại Lễ Hội</option>
+                                    <option ng-repeat="category in categories" value="{{category._id}}">{{category.name}}</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-9 col-sm-offset-3 col-xs-12">
+                                <span class="text-error" ng-show="info.typeEvent.$dirty && info.typeEvent.$invalid">
+                                    <span ng-show="info.title.$error.required" class="text-error">vui lòng lưu lại nếu bạn muốn bỏ trống</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infomation-content row">
+                        <div class="box-info-normal">
+                            <div class="lable col-sm-3 col-xs-12">Tên địa điểm</div>
+                            <div class="details col-sm-9 col-xs-12">
+                                <input type="text" ng-model="festival.mainAddress" name='mainAddress' placeholder="ví dụ: 702 Nguyễn Văn Linh , Quận 7, Thành Phố Hồ Chí Minh" spellcheck="false" required="true"/>
+                            </div>
+                            <div class="col-sm-9 col-sm-offset-3 col-xs-12">
+                                <span class="text-error" ng-show="info.mainAddress.$dirty && info.mainAddress.$invalid">
+                                    <span ng-show="info.mainAddress.$error.required" class="text-error">vui lòng lưu lại nếu bạn muốn bỏ trống</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infomation-content row">
+                        <div class="box-info-normal">
+                            <div class="lable col-sm-3 col-xs-12">Địa chỉ</div>
+                            <div class="details col-sm-9 row col-xs-12">
+                                <select class="col-sm-4 col-xs-5" ng-model="festival.city" ng-change="onChangeValidateInfoTab(1)" convert-to-number>
+                                    <option value="" ng-disabled="true">Chọn Tỉnh / Thành Phố</option>
+                                    <option ng-repeat="province in provincies" ng-click="onProvinceSelected(province)" value="{{province.code}}">{{province.name}}</option>
+                                </select>
+                                <select class="col-sm-4 col-sm-offset-1 col-xs-5 col-xs-offset-2" ng-model="festival.district" ng-change="onChangeValidateInfoTab(2)">
+                                    <option value="" ng-disabled="true">Chọn Huyện / Phường</option>
+                                    <option ng-repeat="itemDistricts in districts" ng-click="onDistrictSelected(itemDistricts.name)" value="{{itemDistricts.name}}">{{itemDistricts.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infomation-content row">
+                        <div class="box-info-normal">
+                            <div class="lable col-sm-3 col-xs-12">Giá</div>
+                            <div class="details col-sm-9 col-xs-12">
+                              <input name="priceTicket" ng-change="onChangeValidateInfoTab()" ng-model="festival.priceTicket" type="number" spellcheck="false" min="0" max="100000000" required/>
+                            </div>
+                            <div class="col-sm-9 col-sm-offset-3 col-xs-12">
+                                <span class="text-error" ng-show="info.priceTicket.$dirty && info.priceTicket.$invalid">
+                                    <span ng-show="info.priceTicket.$error.number">giá phải là một con số</span>
+                                    <span ng-show="info.priceTicket.$error.min">giá phải nằm trong khoảng 0 và 1.000.000</span>
+                                    <span ng-show="info.priceTicket.$error.max">giá phải nằm trong khoảng 0 và 1.000.000</span>
+                                    <span ng-show="info.priceTicket.$error.required">vui lòng lưu lại nếu bạn muốn bỏ trống</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-save">
+                      <button type="button" class="btn-blue btn-fix" ng-click="onSave()">
+                        <div ng-show="!isSaving">
+                          <i class="fa fa-floppy-o" aria-hidden="true"></i>Lưu lại
+                        </div>
+                        <div ng-show="isSaving">
+                          <i class="fa fa-spinner" aria-hidden="true" style="animation: spin 1.5s infinite linear"></i>
+                        </div>
+                      </button>
+                      <button type="submit" class="btn-fix btn-blue" ng-click="onChangeTab()" ng-class="{'disable' : info.$invalid || info.invalid, 'btn-blue': ! info.$invalid && !info.invalid}" ng-disabled="info.$invalid || info.invalid">
+                        <div ng-show="!isSavingBeforeEnter">
+                          <i class="fa fa-sign-in" aria-hidden="true"></i>Tiếp tục
+                        </div>
+                        <div ng-show="isSavingBeforeEnter">
+                          <i class="fa fa-spinner" aria-hidden="true" style="animation: spin 1.5s infinite linear"></i>
+                        </div>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+          </section>
+          <!--end:lastReview-->
+          <section class="hide detailPostTab feedback-form infoUserTab" style="padding-bottom: 30px;">
+            <div class="infomation-box">
+              <form name='detailPost' novalidate="true">
+                <div class="infomation-content row">
+                    <div class="box-info-normal">
+                        <div class="lable col-sm-3 col-xs-12">Mô tả sơ lược</div>
+                        <div class="details col-sm-9 col-xs-12">
+                            <input ng-model="festival.description" name="description" type="text" spellcheck="false" required="true" ng-change="onChangeValidateEventTab()"/>
+                            <span class="text-error" ng-show="detailPost.description.$dirty && detailPost.description.$invalid">
+                                <span ng-show="detailPost.description.$error.required" class="text-error">vui lòng lưu lại nếu bạn muốn bỏ trống</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="infomation-content row">
+                  <div class="box-info-normal">
+                      <div class="lable col-sm-3 col-xs-12">Thông tin chi tiết</div>
+                      <div class="details col-sm-9 col-xs-12">
+                        <ng-ckeditor ng-model="festival.content" ng-change="onChangeValidateEventTab()" name="content" skin="moono" remove-buttons="Image" remove-plugins="iframe,flash,smiley" require="true"></ng-ckeditor>
+                          <!-- <textarea rows="5" ng-model="festival.content" name="content" spellcheck="false" lhv-editor placeholder="Những thông tin và hoạt động diễn ra trong lễ hội" required/> -->
+                          <span class="text-error" ng-show="detailPost.content.$dirty && detailPost.content.$invalid">
+                              <span ng-show="detailPost.content.$error.required" class="text-error">vui lòng lưu lại nếu bạn muốn bỏ trống</span>
+                          </span>
+                      </div>
+                  </div>
+                </div>
+                <div class="listEvent">
+                  <h3>Sự kiện đã tạo:</h3>
+                  <table class="table">
+                    <tbody>
+                      <tr ng-repeat="event in events">
+                        <td>{{event.name}}</td>
+                        <td class="center" width="60" style="cursor: pointer; color: green">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true" ng-click="onUpdateEvent(event._id)"></i>
+                            <i class="fa fa-trash-o" aria-hidden="true" ng-click="onConfirmDeleteEvent(event._id)"></i>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="box-event ">
+                  <ng-form name="addEvent" novalidate="true">
+                    <div class="infomation-content row">
+                        <div class="box-info-normal">
+                            <div class="lable col-sm-3 col-xs-12">Tên sự kiện</div>
+                            <div class="details col-sm-9 col-xs-12">
+                                <input ng-model="event.name" name="nameEvent" type="text" spellcheck="false" required="true"/>
+                                <span class="text-error" ng-show="addEvent.nameEvent.$dirty && addEvent.nameEvent.$invalid">
+                                    <span ng-show="addEvent.nameEvent.$error.required" class="text-error">vui lòng lưu lại nếu bạn muốn bỏ trống</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infomation-content row">
+                        <div class="box-info-normal">
+                            <div class="lable col-sm-3 col-xs-12">Ngày bắt đầu</div>
+                            <div class="details col-sm-2 col-xs-12">
+                                <input ng-model="$root.dateBegin" id="dateBegin" type="text" name="dateBegin" spellcheck="false" required="true"/>
+                                <div>
+                                  <span class="text-error" ng-show="addEvent.dateBegin.$dirty && addEvent.dateBegin.$invalid">
+                                    <span ng-show="addEvent.dateBegin.$error.required" class="text-error">vui lòng lưu lại nếu bạn muốn bỏ trống</span>
+                                  </span>
+                                </div>
+                            </div>
+                            <div class="lable col-sm-3 col-sm-push-2 col-xs-12">Giờ</div>
+                            <div class="details col-sm-2 col-xs-12">
+                                <input ng-model="$root.timeBegin" id="timeBegin" type="text" name="timeBegin" spellcheck="false" />
+                                <div>
+                                  <span class="text-error" ng-show="addEvent.timeBegin.$dirty && addEvent.timeBegin.$invalid"></span>
+                                  <span ng-show="addEvent.timeBegin.$error.required" class="text-error">vui lòng lưu lại nếu bạn muốn bỏ trống</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="infomation-content row">
+                          <div class="box-info-normal">
+                              <div class="lable col-sm-3 col-xs-12">Ngày kết thúc</div>
+                              <div class="details col-sm-2 col-xs-12">
+                                  <input ng-model="$root.dateEnd" id="dateEnd" type="text" name="dateEnd" spellcheck="false" />
+                                  <div>
+                                <span class="text-error" ng-show="event.dateEnd.$dirty && event.dateEnd.$invalid">
+                                    <span ng-show="event.dateEnd.$error.required" class="text-error">vui lòng lưu lại nếu bạn muốn bỏ trống</span>
+                                </span>
+                                  </div>
+                              </div>
+                              <div class="lable col-sm-3 col-sm-push-2 col-xs-12">Giờ</div>
+                              <div class="details col-sm-2 col-xs-12">
+                                  <input ng-model="$root.timeEnd" id="timeEnd" type="text" name="timeEnd" spellcheck="false" />
+                                  <span class="text-error" ng-show="event.timeEnd.$dirty && event.timeEnd.$invalid">
+                                      <span ng-show="event.timeEnd.$error.required" class="text-error">vui lòng lưu lại nếu bạn muốn bỏ trống</span>
+                                  </span>
+                              </div>
+                          </div>
+                      </div>
+                  </ng-form>
+                  <div class="text-center">
+                    <button type="button" name="button" class="btn-blue btn-fix" ng-click="onUpdateOrCreateEvent()">
+                      <div ng-show="!event.isSaving">
+                        <i class="fa fa-floppy-o" aria-hidden="true"></i>Hoàn Tất
+                      </div>
+                      <div ng-show="event.isSaving">
+                        <i class="fa fa-spinner" aria-hidden="true" style="animation: spin 1.5s infinite linear"></i>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+                <div class="event">
+                    <button type="button" name="button" class="btn-create-event" ng-click="onAddEvent()"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i>Thêm sự kiện</button>
+                </div>
+
+                <div class="box-save box-save2">
+                  <button type="button" class="btn-blue btn-fix" ng-click="onSave()">
+                    <div ng-show="!isSaving">
+                      <i class="fa fa-floppy-o" aria-hidden="true"></i>Lưu lại
+                    </div>
+                    <div ng-show="isSaving">
+                      <i class="fa fa-spinner" aria-hidden="true" style="animation: spin 1.5s infinite linear"></i>
+                    </div>
+                  </button>
+                  <button type="submit" class="btn-fix btn-blue" ng-click="onChangeTab()" ng-class="{'disable' : detailPost.invalid, 'btn-blue': !detailPost.invalid}" ng-disabled="detailPost.invalid">
+                    <div ng-show="!isSavingBeforeEnter">
+                      <i class="fa fa-sign-in" aria-hidden="true"></i>Tiếp tục
+                    </div>
+                    <div ng-show="isSavingBeforeEnter">
+                      <i class="fa fa-spinner" aria-hidden="true" style="animation: spin 1.5s infinite linear"></i>
+                    </div>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </section>
+          <!--end:lastReview-->
+          <section class="hide lastTab feedback-form infoUserTab">
+              <div class="infomation-box">
+                <form name='lastPost' novalidate="true">
+                  <div class="infomation-content row">
+                      <div class="box-info-normal">
+                          <div class="lable col-sm-3 col-xs-12">Điện thoại</div>
+                          <div class="details col-sm-9 col-xs-12">
+                              <input type="text" ng-model="festival.phoneNumber" name="phoneNumber" type="text" onkeypress="return isNumberKey(event)" required/>
+                          </div>
+                          <div class="col-sm-9 col-sm-offset-3 col-xs-12">
+                              <span class="text-error" ng-show="lastPost.phoneNumber.$dirty && lastPost.phoneNumber.$invalid">
+                                  <span ng-show="lastPost.phoneNumber.$error.required">số điện thoại là là bắt buộc</span>
+                              </span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="infomation-content row">
+                      <div class="box-info-normal">
+                          <div class="lable col-sm-3 col-xs-12">Email</div>
+                          <div class="details col-sm-9 col-xs-12">
+                              <input type="email" ng-model="festival.emailAddress" name='emailAddress' spellcheck="false" required/>
+                          </div>
+                          <div class="col-sm-9 col-sm-offset-3 col-xs-12">
+                            <span class="text-error" ng-show="lastPost.emailAddress.$dirty && lastPost.emailAddress.$invalid">
+                              <span ng-show="lastPost.emailAddress.$error.email">email không hợp lệ</span>
+                              <span ng-show="lastPost.emailAddress.$error.required">email là là bắt buộc</span>
+                            </span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="infomation-content row">
+                      <div class="box-info-normal">
+                          <div class="lable col-sm-3 col-xs-12">Website</div>
+                          <div class="details col-sm-9 col-xs-12">
+                              <input ng-model="festival.website" type="text" spellcheck="false" />
+                          </div>
+                      </div>
+                  </div>
+                </form>
+              </div>
+              <div style="text-align:center">
+                  <button ng-click="onSubmit()" class="btn-fix btn-blue" ng-class="{'disable' : lastPost.$invalid || lastPost.invalid, 'btn-blue': ! lastPost.$invalid && !lastPost.invalid}" ng-disabled="lastPost.$invalid || lastPost.invalid">
+                    <div ng-show="!isCreatingFestival">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {{nameFinalTask}}
+                    </div>
+                    <div ng-show="isCreatingFestival">
+                      <i class="fa fa-spinner" aria-hidden="true" style="animation: spin 1.5s infinite linear"></i>
+                    </div>
+                    </button>
+              </div>
+          </section>
+
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+<!--alert succes delete post-->
+<div class="modal fade" id="delete-event" tabindex="-1" role="dialog" aria-hidden="true" style="margin-top: 10px;">
+    <div class="modal-dialog modal-sm">
+        <form role="form">
+            <div class="modal-content">
+                <div class="modal-body" style="text-align: center;">
+                    <div class="row">
+                        <label class="col-xs-12" style="font-size: 20px; margin-bottom: 20px; margin-top: 20px;">Bạn muốn xóa sự kiện?</label>
+                        <div class="col-xs-12 ">
+                            <button class="btn btn-default" data-dismiss="modal">Không</button>
+                            <button type="button" class="btn btn-primary" ng-click="onDeleteEvent()">Đồng ý</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+$(function() {
+    $("html, body").stop().animate({scrollTop:0}, '2000', 'swing');
+    $('input[name="dateBegin"],input[name="dateEnd"]').datetimepicker({
+        format: 'DD/MM/YYYY',
+        minDate : new Date()
+    });
+    $('input[name="timeBegin"],input[name="timeEnd"]').datetimepicker({
+        format: 'HH:mm'
+    });
+    $('input[name="dateBegin"]').on("dp.change", function (e) {
+        $('input[name="dateEnd"]').data("DateTimePicker").minDate(e.date);
+        $('input[name="dateEnd"]').data("DateTimePicker").date(e.date);
+    });
+    $('input[name="dateEnd"]').on("dp.change", function (e) {
+            $('input[name="dateBegin"]').data("DateTimePicker").maxDate(e.date);
+    });
+
+});
+//upload and display image
+$(function() {
+    $(":file").change(function() {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = imageIsLoaded;
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+});
+
+function imageIsLoaded(e) {
+    $("#listImage").empty();
+    $("#listImage").append("<li class='col-xs-4'><img id='imgThumbnail' class='imgsize' src='#'/><div class='delete' onclick='removeImgThumbnail()';><span>x</span></div></li>");
+    $('#imgThumbnail').attr('src', e.target.result);
+
+};
+
+$("#listImage").on("click", "li", function() {
+
+});
+
+function removeImgThumbnail() {
+    $("#listImage").empty();
+}
+</script>

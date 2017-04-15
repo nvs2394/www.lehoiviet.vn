@@ -1,0 +1,66 @@
+#profile_edit{
+	margin-top: 20px;
+	.accProfile_left{
+		margin-top: 10px;
+		.accProfile_left_pro{
+			a{
+				color: #222;
+				border-bottom: 1px solid #ddd;
+			}
+			img{
+				width: 40px;
+				height: 40px;
+				margin-right: 10px;
+			}
+			span{
+				font-size: 16px;
+				font-weight: 600;
+			}
+		}
+		.itemTab, a{
+			border-bottom: 1px solid #eee;
+			color: #999;
+			display: block;
+			font-size: 13px;
+			padding: 10px 0 10px 0;
+			text-decoration: none;
+		}
+		.accProfile_item:hover{
+				color: #111;
+		}
+		.accProfile_curent{
+				color: #333;
+		}
+		.fa-angle-right{
+			float: right;
+			font-size: 20px;
+		}
+	}/*accProfile_left*/
+
+	.accProfile_right{
+		color: #333;
+		.account-edit-profile-header, .updateAvatar-header, .updatePassword-header{
+				font-size: 16px;
+				font-weight: 700;
+				line-height: 20px;
+				margin-bottom: 10px;
+				margin-top: 5px;
+				padding: 0 0 10px 0;
+				border-bottom: 1px solid #eee;
+			}
+		.personal_info, #updateAvatar, #updatePassword{
+			margin-top: 10px;
+			background-color: #fff;
+			border: 1px solid #eee;
+			border-radius: 3px;
+			padding: 10px;
+			margin-bottom: 10px;
+			select{
+				border-radius: 2px;
+				border: 1px solid #ddd;
+				padding: 5px;
+			}
+		}/*personal_info*/
+	}/*accProfile_left*/
+	
+}

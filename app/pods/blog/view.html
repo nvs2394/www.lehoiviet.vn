@@ -1,0 +1,66 @@
+<section id="header" style="background-image: url(assets/img/RockIslandsPalau_1920x1200.jpg);">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <blockquote>
+                <p>Tham quan những lễ hội truyền thống với những văn hóa độc đáo trên mọi miền tổ quốc</p>
+            </blockquote>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</section>
+
+<div id="allBlog" ng-init="initData()">
+    <div class="ad-box">
+        <div class="container">
+            <h3># Hãy viết lên suy nghĩ của bạn và chia sẻ với cộng đồng</h3>
+            <h4>Thúc đẩy ngành du lịch và văn hóa Việt Nam <i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i></h4>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+                    <div class="panel-body">
+                        <!--/stories-->
+                        <div class="row blog-item" ng-repeat="blog in blogs" style="background-color: #fff">
+                            <br>
+                            <div class="col-md-2 col-sm-3 text-center">
+                                <a class="story-img" href="#"><img src="{{blog.userId.avatar}}" style="width:100px;height:100px" class="img-circle"></a>
+                                <p>
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <small>{{blog.userId.firstName}} {{blog.userId.lastName}}</small>
+                                </p>
+                                <p><i class="fa fa-calendar-o" aria-hidden="true"></i> {{blog.createAt | date:"MM/dd/yyyy h:mm"}}</p>
+                            </div>
+                            <div class="col-md-10 col-sm-9">
+                                <h3 class="title"><a href="/blogs/detail/{{blog._id}}" ng-click="goToDetailBlog()">{{blog.title}}</a></h3>
+                                <div class="row">
+                                    <div class="col-xs-9">
+                                        <p>{{blog.content.trunc(300)}}</p>
+
+                                        <ul class="list-inline">
+                                            <li><a href="#">{{blog.createAt.fomatDate()}}</a></li>
+                                             <li><a href="#"><i class=" glyphicon glyphicon-thumbs-up"></i> {{blog.statistic.comments}} Thích</a></li>
+                                            <li><a href="#"><i class="glyphicon glyphicon-comment"></i> {{blog.statistic.comments}} Bình luận</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!--/stories-->
+                        <a class="btn btn-primary pull-right btnNext" ng-click="loadMoreReview()">Xem thêm<i class="glyphicon glyphicon-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ad-box">
+        <div class="container">
+            <h3># Hãy gửi phản hồi cho chúng tôi</h3>
+            <h4>chúng tôi sẽ cải thiện sản phẩm của mình và mang lại trải nghiệm cho bạn<i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i></h4>
+            <button class="btn btn-primary fa fa-envelope"> Gửi phản hồi</button>
+        </div>
+    </div>
+</div>

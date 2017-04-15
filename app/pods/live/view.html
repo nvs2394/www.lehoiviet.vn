@@ -1,0 +1,32 @@
+
+<div ng-init="init()">
+<div class="create-live-stream">
+    <div class="container">
+        <div class="video-live" ng-show="isStreaming">
+            <video id="streamPlayer" muted="muted" autoplay="true"></video>
+            <div class="overlay-video">
+                <a href="" ng-click="stopStreamming()"><i class="fa fa-stop-circle-o" aria-hidden="true"></i></a>
+            </div>
+            <img src="assets/img/giphy.gif" alt="">
+        </div>
+
+        <div class="image-live" ng-show="!isStreaming">
+            <div class="overlay-create">
+                <div class="row-overlay clearfix">
+                    <div>
+                        <i class="fa fa-video-camera" aria-hidden="true"></i>Live
+                    </div>
+                    <div>
+                        <h2>{{festival.title}}</h2>
+                        <p>Thời gian: {{formatDate(festival.timeBegin)}}</p>
+                        <p>{{festival.address.city}}</p>
+                    </div>
+                </div>
+                <button ng-click="startStreamming()"><i class="fa fa-play-circle" aria-hidden="true"></i></button>
+            </div>
+            <img src="https://wallpapersrage.com/wp-content/uploads/2016/05/EWB0009963-Lanterns-released-into-sky-during-a-festival-Chiang-Mai-province-Thailand-640x400.jpg" alt=""/>
+        </div>
+        <!-- <chat-box streamId="10"></chat-box> -->
+    </div>
+</div>
+</div>

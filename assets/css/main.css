@@ -1,0 +1,153 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic&subset=latin,vietnamese);
+@import url('https://fonts.googleapis.com/css?family=Lobster&subset=vietnamese');
+@import url('https://fonts.googleapis.com/css?family=Lobster&subset=vietnamese');
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: #555;
+    background: #f1f1f1;
+    /*scrollbar-face-color: #333*/
+}
+
+@media (min-width: 380px) and (max-width: 993px) {
+    .festival-item .festival-img img {
+        width: 100%;
+        height: 100px;
+    }
+    .festival-item .festival-info .header i {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 379px) {
+    #postArticle h3 {
+        font-size: 14px;
+    }
+    #postArticle .festival-item {
+        margin-top: 10px;
+    }
+    .festival-item .festival-img img {
+        width: 100%;
+        height: 100px;
+    }
+    .festival-item .festival-info .header i {
+        font-size: 14px;
+    }
+}
+
+.festival-item {
+    background-color: #fff;
+    color: #555;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    margin-top: 10px;
+}
+
+.festival-item .col-xs-12 {
+    padding: 0px;
+}
+
+.festival-item .festival-img img {
+    width: 100%;
+    height: 250px;
+}
+
+.festival-item .festival-info {
+    padding: 10px;
+    padding: 10px;
+}
+
+
+.festival-item .festival-info .col-xs-3 {
+    padding: 0px;
+    text-align: center;
+}
+
+.festival-item .festival-info ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.festival-item .festival-info li {
+    list-style: none;
+}
+
+.festival-item .festival-info .header {
+    margin-bottom: 5px;
+}
+
+.festival-item .festival-info .header i {
+    margin-top: 5px;
+    font-size: 35px;
+    color: #c7c4b7;
+}
+
+.festival-item .festival-info .header a{
+    margin: 0px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #337ab7;
+    line-height: 150%;
+}
+.festival-item .festival-info .header a:hover{
+    text-decoration: none;
+    color: #f80;
+}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    background: red;
+    cursor: inherit;
+    display: block;
+}
+
+
+}
+#page {
+    display: none;
+}
+#loading {
+    display: block;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: white;
+    /* rgba(192, 192, 192, 0.5) */
+    background-image: url('/images/Preloader_2.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.alert-saving {
+	background-color: #4AB866;
+	border-color: #4AB866;
+	border-radius: 0px;
+	color:white;
+	padding: 10px;
+  width: 200px;
+}
+
+.alert-submitting {
+	background-color: #4AB866;
+	border-color: #4AB866;
+	border-radius: 0px;
+	color:white;
+	padding: 10px;
+  width: 500px;
+}

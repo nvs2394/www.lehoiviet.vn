@@ -1,0 +1,30 @@
+/*!
+ * Start Bootstrap - Blog Post HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+footer {
+    margin: 50px 0;
+}
+
+#allBlog{
+	margin-top: 20px;
+}
+
+.img-ava{
+	width: 100px;
+	border-radius: 50%;
+}
+
+.comment-item{
+	margin-bottom: 10px;
+}
+
+.comment-content{
+}
+
+.clear-footer{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}

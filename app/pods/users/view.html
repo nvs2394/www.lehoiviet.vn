@@ -1,0 +1,19 @@
+﻿<div ng-init="init()">
+  <div class="row" id="review-top-list">
+      <div class="container">
+          <div class="user-item col-sm-3 col-xs-6" ng-repeat="user in users">
+              <div class="box-item row">
+                  <div class="col-xs-5" style="text-align: center">
+                      <a href="#/user/profile/{{user._id}}">
+                          <img class="img-circle" src="{{user.avatar}}" />
+                      </a>
+                  </div>
+                  <div class="col-xs-7 username">
+                      <a ng-href="#/user/profile/{{user._id}}">{{user.firstName}}{{user.lastname}}</a></br>
+                      <span class="badge"> Bài Đăng: {{user.statistic.countpost}}</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

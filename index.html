@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html ng-app="lehoiviet" ng-controller="appController" ng-init="init()" xmlns="http://www.w3.org/1999/xhtml" lang="vi-VN" xml:lang="vi-VN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <link href="assets/img/Logo_square.ico" rel="icon" />
+    <title>Lễ Hội Việt</title>
+    <link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.css">
+    <script src="assets/libs/bootstrap/js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/libs/bootstrap/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/festival.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <!--<link rel="stylesheet" type="text/css" media="all" href="assets/libs/bootstrap/bootstrap-datetimepicker/daterangepicker.css" />-->
+
+    <link rel="stylesheet" type="text/css" media="all" href="assets/libs/ng-img-crop.css" />
+    <link rel="stylesheet" type="text/css" href="assets/libs/animate.css">
+
+    <!-- Inject Style for specific view -->
+    <link rel="stylesheet" type="text/css" href="assets/css/postArticle.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/profileNew.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/profileEdit.css">
+    <link rel="stylesheet" href="assets/libs/barrating/bootstrap-stars.css">
+    <script type="text/javascript" src="assets/libs/barrating/jquery.barrating.js"></script>
+    <link rel="stylesheet" href="assets/css/loading.css">
+    <link rel="stylesheet" href="assets/css/new-display.css">
+
+    <!--include datetimepicker-->
+    <link rel="stylesheet" href="assets/libs/bootstrap/bootstrap-datetimepicker/bootstrap-datetimepicker.css">
+    <script type="text/javascript" src="assets/libs/bootstrap/bootstrap-datetimepicker/moment.min.js"></script>
+    <script src="assets/libs/bootstrap/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+    <script src="assets/libs/bootstrap/bootstrap-datetimepicker/moment-with-locales.js"></script>
+    <!--<script src="assets/libs/bootstrap/bootstrap-datetimepicker/vi.js"></script>-->
+
+    <!--Inject select2-->
+    <link rel="stylesheet" href="assets/libs/select2/css/select2.min.css">
+    <script src="assets/libs/select2/js/select2.js"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"> -->
+
+</head>
+
+<body>
+  <top-menu></top-menu>
+  <data-loader></data-loader>
+    <div id="page">
+        <div>
+          <div id="fb-root"></div>
+              <div ng-view></div>
+        </div>
+    </div>
+  <info-footer ng-show="$root.currentPage !== 'creating-festival' && $root.currentPage !== 'user-profile'"></info-footer>
+  <div class="btn-top">
+    <a href="" ng-click="scrollTop()"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+  </div>
+</body>
+<script src="assets/socket.io-1.4.5.js"></script>
+<!-- inject webrtc -->
+<script src="assets/libs/webrtc/adapter.js"></script>
+
+<!-- Include Libs -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
+<script src="assets/libs/angular/angular-cookies.js"></script>
+<script src="assets/libs/angular/angular-sanitize.min.js"></script>
+<script src="app/webrtc/rtcClient.js"></script>
+<script src="assets/libs/bootstrap/js/bootstrap.js"></script>
+<script src="assets/libs/ng-ckeditor.js"></script>
+<script src="assets/libs/ng-ckeditor.min.js"></script>
+<script src="assets/libs/ckeditor/ckeditor.js"></script>
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyDQMvm2Tiyhav_DY6drBYFDOxpqsfVDcis"></script>
+<script src="assets/libs/ng-map.min.js"></script>
+<script src="assets/libs/bootstrap/bootstrap-notify.min.js"></script>
+<script src="assets/libs/bootstrap/ui-bootstrap-tpls.min.js"></script>
+<!--<script type="text/javascript" src="assets/libs/bootstrap/bootstrap-datetimepicker/daterangepicker.js"></script>-->
+<script src="assets/libs/ng-img-crop.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="app/application.js"></script>
+<script src="app/components/components.js"></script>
+<script src="app/services/net.js"></script>
+
+
+<!-- inject controller -->
+<script src="app/pods/home/controller.js"></script>
+<script src="app/pods/festivals/controller.js"></script>
+<script src="app/pods/video/controller.js"></script>
+<script src="app/pods/blog/controller.js"></script>
+<script src="app/pods/create-festival/controller.js"></script>
+<script src="app/pods/create-blog/controller.js"></script>
+<script src="app/pods/user/controller.js"></script>
+<script src="app/pods/account/controller.js"></script>
+<script src="app/pods/festival/controller.js"></script>
+<script src="app/pods/lives/controller.js"></script>
+<script src="app/pods/create-live/controller.js"></script>
+<script src="app/pods/404/controller.js"></script>
+<script src="app/pods/live/controller.js"></script>
+<script src="app/pods/users/controller.js"></script>
+<script src="app/pods/chat/controller.js"></script>
+<script src="app/pods/reset-password/controller.js"></script>
+
+<!-- inject component -->
+<script src="app/components/lobby/lobby.js"></script>
+<script src="app/components/menu/menu.js"></script>
+<script src="app/components/info-footer/info-footer.js"></script>
+<script src="app/components/top-member/top-member.js"></script>
+<script src="app/components/user-handle/user-handle.js"></script>
+<script src="app/components/date/date.js"></script>
+<script src="app/components/video-header/video-header.js"></script>
+<script src="app/components/image-loader/image-loader.js"></script>
+<script src="app/components/alert/alert.js"></script>
+<script src="app/components/convert-to-number/convert-to-number.js"></script>
+
+<!-- inject service -->
+<script src="app/services/festival.js"></script>
+<script src="app/services/user.js"></script>
+<script src="app/services/video.js"></script>
+<script src="app/services/category.js"></script>
+<script src="app/services/province.js"></script>
+<script src="app/helper/date.js"></script>
+<script src="app/helper/notification.js"></script>
+<script src="app/services/user.js"></script>
+<script src="app/services/blog.js"></script>
+<script src="app/services/live.js"></script>
+<script src="app/services/cookies-manager.js"></script>
+<script src="app/services/image.js"></script>
+<script src="app/services/gateway.js"></script>
+<script src="app/services/event.js"></script>
+<script src="app/services/comment.js"></script>
+<script src="app/services/google.js"></script>
+<script src="app/services/facebook.js"></script>
+</html>

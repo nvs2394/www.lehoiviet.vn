@@ -1,0 +1,12 @@
+<div class="container" data-ng-init="initData()">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-4" ng-repeat="live in lives">
+                <h3>[Trực tiếp] {{live.name}}</h3>
+                <p>{{live.festivalId.title}}</p>
+                <p>Trực tiếp vào{{live.createAt}}</p>
+                <a href="#/live/{{live.streamId}}">Xem</a>
+            </div>
+        </div>
+    </div>
+</div>
