@@ -554,7 +554,7 @@ festival.controller("festivalController", function($scope, $rootScope, festivalS
     var data = {};
     data.href = "https://lehoiviet.vn#/festival/".concat($scope.festival._id);
     data.title = $scope.festival.title;
-    data.picture = "https://api.lehoiviet.vn/".concat($scope.festival.thumbnail.resize);
+    data.picture = "http://localhost:3000/".concat($scope.festival.thumbnail.resize);
     data.description= $scope.festival.description;
     facebookService.onShareFacebook(data);
   };
