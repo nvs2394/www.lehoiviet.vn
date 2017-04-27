@@ -47,11 +47,6 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: "userController",
             controllerAs: 'user'
         })
-        // .when('/users', {
-        //     templateUrl: 'app/pods/user/view.html',
-        //     controller: "userController",
-        //     controllerAs: 'user'
-        // })
         .when('/user/profile/:userId', {
             templateUrl: 'app/pods/user/view.html',
             controller: "userController",
@@ -72,11 +67,6 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: "createLiveController",
             controllerAs: 'createLive'
         })
-        // .when('/live/:streamId', {
-        //     templateUrl: 'app/pods/create-live/view.html',
-        //     controller: "createLiveController",
-        //     controllerAs: 'createLive'
-        // })
         .when('/live/:festivalId', {
             templateUrl: 'app/pods/live/view.html',
             controller: "liveController",
@@ -110,6 +100,9 @@ app.config(['$routeProvider', function($routeProvider) {
 app.constant("ENV", {
     apiUrl: "http://api.lehoiviet.vn",
     gateWay: "http://api.lehoiviet.vn"
+
+    // apiUrl: "http://127.0.0.1:3000",
+    // gateWay: "http://127.0.0.1:3000"
 });
 
 app.constant("FestivalStatus", {
