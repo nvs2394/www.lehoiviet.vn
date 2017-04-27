@@ -26,7 +26,7 @@
                           <li class="notification-message-item" ng-repeat="notification in $root.notificationsForReplyingRequestStream">
                             <a class="clearfix" href="#/festival/{{notification.id}}">
                               <div class="thumnail">
-                                <img ng-src="http://api.lehoiviet.vn{{notification.thumbnail}}" alt="" />
+                                <img ng-src="https://api.lehoiviet.vn{{notification.thumbnail}}" alt="" />
                               </div>
                               <div class="message">
                                 <p>{{notification.title}}</p>
@@ -47,7 +47,7 @@
                       <li class="notification-message-item" ng-repeat="festival in $root.notification">
                         <a class="clearfix" href="#/festival/{{festival.data._id}}" ng-click="onClickNotification()">
                           <div class="thumnail">
-                            <img ng-src="http://api.lehoiviet.vn{{festival.data.thumbnail.full}}" alt="" />
+                            <img ng-src="https://api.lehoiviet.vn{{festival.data.thumbnail.full}}" alt="" />
                           </div>
                           <div class="message">
                             <p>{{festival.data.title}}</p>

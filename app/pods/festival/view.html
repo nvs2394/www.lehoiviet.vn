@@ -13,7 +13,7 @@
 <div id="article" ng-init="initData()">
     <div class="info-festival bg-white">
         <div class="thumbnail-article">
-            <img ng-src="http://api.lehoiviet.vn/{{festival.thumbnail.resize}}" />
+            <img ng-src="https://api.lehoiviet.vn/{{festival.thumbnail.resize}}" />
         </div>
         <div class="container" data-ng-init="getReview()">
             <div class="row">
@@ -164,7 +164,7 @@
                         <h4>Hình ảnh</h4>
                         <div class="row list-img-article">
                             <h5 class="text-center" style="margin: 30px 0" ng-show="album.length <= 0">Chưa có hình ảnh nào</h5>
-                            <img ng-repeat="img in album" ng-click="watchSlide(img.imgName)"class="col-xs-2" src="http://api.lehoiviet.vn/{{img.imgName}}" alt=""/>
+                            <img ng-repeat="img in album" ng-click="watchSlide(img.imgName)"class="col-xs-2" src="https://api.lehoiviet.vn/{{img.imgName}}" alt=""/>
                         </div>
                         <h4>Video live stream</h4>
                         <div class="list-img-article clearfix">
@@ -229,7 +229,7 @@
                                         <textarea ng-show="editable == cmt._id" ng-model="editableContent[cmt._id]" ng-init="editableContent[cmt._id] = cmt.content" class="form-control" placeholder="Nhập bình luận của bạn..."></textarea>
                                         <div class="comment-render-image clearfix">
                                           <a href="" class="edit-image" ng-repeat="img in cmt.imageId">
-                                            <img ng-src="http://api.lehoiviet.vn/{{img.imgName}}" alt="" />
+                                            <img ng-src="https://api.lehoiviet.vn/{{img.imgName}}" alt="" />
                                             <span ng-show="editable == cmt._id" ng-click="onDeleteImageEditableMode(cmt, img)">x</span>
                                             <div id="delete-image-editable" class="modal fade " tabindex="-1" role="dialog">
                                                 <div class="modal-dialog modal-sm">
@@ -272,7 +272,7 @@
                 <div class="modal-body">
                     <button type="button" data-dismiss="modal" aria-label="Close"><i class="fa fa-times-circle" aria-hidden="true"></i>
                     </button>
-                    <img src="http://api.lehoiviet.vn{{shownImage}}" alt=""/>
+                    <img src="https://api.lehoiviet.vn{{shownImage}}" alt=""/>
                 </div>
             </div>
         </div>
