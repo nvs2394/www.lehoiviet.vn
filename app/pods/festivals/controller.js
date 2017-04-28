@@ -17,7 +17,7 @@ festivals.controller("festivalsController", function($scope, $rootScope, festiva
 
     var data = {};
     data.page = $scope.currentPage;
-    data.limit = 1;
+    data.limit = 10;
 
     festivalService.getFestivals(data, function(response){
       $scope.festivals = response.data.rows;
